@@ -4,9 +4,9 @@
     <div
       class="nl__main-header d-flex align-items-center justify-content-xl-start justify-content-between p-3 p-xl-0"
     >
-      <div class="nl__header-one-logo">
+      <div class="nl__header-one-logo" v-if="site.logo">
         <a href="index.html">
-          <img src="/images/logo-black.svg" alt="" />
+          <img :src="site.logo" alt="" height="100" width="100" />
         </a>
       </div>
       <div
@@ -24,55 +24,33 @@
             <li><nuxt-link to="/">Home</nuxt-link></li>
 
             <li><nuxt-link to="/about-us">About Us</nuxt-link></li>
-            <li><nuxt-link to="/residential">ss</nuxt-link></li>
             <li class="has-submenu">
-              <a href="javascript:void(0)">Project</a>
+              <a href="javascript:void(0)">Our Property</a>
               <ul class="submenu-wrapper submenu-wrapperv1">
-                <li><a href="project.html">Projects</a></li>
-                <li>
-                  <a href="project-details.html">Project Details</a>
-                </li>
+                <li><nuxtLink to="/residential">Residential</nuxtLink></li>
+                <li><nuxtLink to="/commercial">Commercial</nuxtLink></li>
+                <li><nuxtLink to="/plot">Plot</nuxtLink></li>
               </ul>
             </li>
-            <li class="has-submenu">
-              <a href="javascript:void(0)">Services</a>
-              <ul class="submenu-wrapper submenu-wrapperv1">
-                <li><a href="service.html">Services</a></li>
-                <li>
-                  <a href="service-details.html">Service Details</a>
-                </li>
-              </ul>
-            </li>
-            <li class="has-submenu">
-              <a href="javascript:void(0)">Pages</a>
-              <ul class="submenu-wrapper submenu-wrapperv1">
-                <li><a href="faq.html">Faq</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </li>
-            <li class="has-submenu">
-              <a href="javascript:void(0)">Blog</a>
-              <ul class="submenu-wrapper submenu-wrapperv1">
-                <li><a href="blog.html">Blog List</a></li>
-                <li><a href="blog-details.html">Blog Details</a></li>
-              </ul>
-            </li>
+            <li><nuxt-link to="/gallery">Gallery</nuxt-link></li>
+            <li><nuxt-link to="/ourTeam">Our Team</nuxt-link></li>
+            <li><nuxt-link to="/contact">Contact Us</nuxt-link></li>
           </ul>
         </nav>
 
         <div class="nl__header-social-item">
-          <a href="#"
+          <a :href="site.facebook_link" target="_blank"
             ><i class="nl-icon nl-icon-facebook nl-color-black"></i
           ></a>
-          <a href="#"
+          <a :href="site.instagram_link" target="_blank"
             ><i class="nl-icon nl-icon-instagram nl-color-black"></i
           ></a>
-          <a href="#"
+          <!-- <a href="#"
             ><i class="nl-icon nl-icon-x-twitter nl-color-black"></i
           ></a>
           <a href="#"
             ><i class="nl-icon nl-icon-linkedin nl-color-black"></i
-          ></a>
+          ></a> -->
         </div>
       </div>
       <div
@@ -85,9 +63,11 @@
         </div>
         <div class="nl__header-number">
           <h5 class="nl-fs-18 nl-lh-30 text-white">Need Help?</h5>
-          <a href="tel:8085550111" class="nl-fs-18 nl-lh-24 text-white">{{
-            site.phone_number1
-          }}</a>
+          <a
+            :href="'tel:' + site.phone_number1"
+            class="nl-fs-18 nl-lh-24 text-white"
+            >+91 {{ site.phone_number1 }}</a
+          >
         </div>
       </div>
       <button type="button" class="header-toggle mobile-menu-toggle d-xl-none">
