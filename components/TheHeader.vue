@@ -6,7 +6,13 @@
     >
       <div class="nl__header-one-logo" v-if="site.logo">
         <a href="index.html">
-          <img :src="site.logo" alt="" height="100" width="100" />
+          <img
+            :src="site.logo"
+            alt=""
+            height="100"
+            width="100"
+            style="border-radius: 50px"
+          />
         </a>
       </div>
       <div
