@@ -78,7 +78,7 @@
                 <span class="nl-color-brown mr-10"
                   ><i class="nl-icon nl-icon-circle-check"></i
                 ></span>
-                Turning Dreams into Addresses
+                Trust our team of dedicated real estate experts.
               </li>
               <li
                 class="nl-color-black nl-font-heading nl-fs-18 nl-lh-24 has_fade_anim"
@@ -86,7 +86,7 @@
                 <span class="nl-color-brown mr-10"
                   ><i class="nl-icon nl-icon-circle-check"></i
                 ></span>
-                Where Every Home Tells a Story
+                Find your perfect match with personalized solutions.
               </li>
               <li
                 class="nl-color-black nl-font-heading nl-fs-18 nl-lh-24 has_fade_anim"
@@ -94,7 +94,23 @@
                 <span class="nl-color-brown mr-10"
                   ><i class="nl-icon nl-icon-circle-check"></i
                 ></span>
-                Your Key to Real Estate Success
+                Experience honesty and clarity throughout.
+              </li>
+              <li
+                class="nl-color-black nl-font-heading nl-fs-18 nl-lh-24 has_fade_anim"
+              >
+                <span class="nl-color-brown mr-10"
+                  ><i class="nl-icon nl-icon-circle-check"></i
+                ></span>
+                Count on us for outstanding support.
+              </li>
+              <li
+                class="nl-color-black nl-font-heading nl-fs-18 nl-lh-24 has_fade_anim"
+              >
+                <span class="nl-color-brown mr-10"
+                  ><i class="nl-icon nl-icon-circle-check"></i
+                ></span>
+                Your goals are our focus.
               </li>
             </ul>
           </div>
@@ -150,11 +166,14 @@
           </div>
           <p class="nl__counter-title nl-color-gray-800">Units</p>
         </div>
+      </div>
+      <br /><br />
+      <div class="nl__counter-wrap d-flex flex-wrap">
         <div class="nl__counter-item">
           <div
-            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82"
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
           >
-            <span class="odometer" data-count="10">{{
+            <span class="odometer" data-count="250">{{
               aboutUs.residential_property
             }}</span>
             <span class="suffix">+</span>
@@ -165,9 +184,9 @@
         </div>
         <div class="nl__counter-item">
           <div
-            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82"
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
           >
-            <span class="odometer" data-count="12">{{
+            <span class="odometer" data-count="250">{{
               aboutUs.commercial_property
             }}</span>
             <span class="suffix">+</span>
@@ -176,9 +195,9 @@
         </div>
         <div class="nl__counter-item">
           <div
-            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82"
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
           >
-            <span class="odometer" data-count="10">{{ aboutUs.plots }}</span>
+            <span class="odometer" data-count="250">{{ aboutUs.plots }}</span>
             <span class="suffix">+</span>
           </div>
           <p class="nl__counter-title nl-color-gray-800">Plots</p>
@@ -504,7 +523,7 @@
             class="nl__section-title pt-20 pb-60 m-auto nl__about-section-title"
           >
             <h2 class="nl-fs-48 nl-lh-62 nl-color-black has_fade_anim">
-              Unlocking doors to a better future Discover
+              Meet Our Property Pioneers
             </h2>
           </div>
         </div>
@@ -520,11 +539,11 @@
           >
             <div class="nl__faq-banner-img has_fade_anim image-hover">
               <img :src="item.image" alt="" />
-              <div
+              <!-- <div
                 class="nl__featured-badge nl-font-heading nl-fs-18 nl-lh-24 nl-color-black nl-border-radius-5 bg-white"
               >
                 {{ item.role }}
-              </div>
+              </div> -->
             </div>
             <div class="nl__property-details-wrap has_fade_anim">
               <div
@@ -758,8 +777,10 @@
                 <p
                   class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 pb-1 has_fade_anim"
                 >
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking
+                  Homes Real Estate unlocks the real potential of every
+                  property. With our dedicated team and personalized approach,
+                  we transform spaces into opportunities, guiding you towards
+                  your ideal investment or dream home.
                 </p>
                 <div class="row pt-25">
                   <div

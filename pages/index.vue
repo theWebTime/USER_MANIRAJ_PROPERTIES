@@ -43,7 +43,7 @@
           <h1
             class="nl-color-black nl-fs-62 nl-lh-86 text-uppercase nl-font-heading has_char_anim"
           >
-            <span>real estate success</span>
+            <span>Maniraj Properties:</span>
             <span class="nl__title-side-img">
               <img
                 src="/images/title-image1.png"
@@ -51,7 +51,7 @@
                 class="img_anim_reveal"
               />
             </span>
-            <span>Turning properties into Design</span>
+            <span>Building Your Dreams into Reality</span>
           </h1>
         </div>
       </div>
@@ -82,13 +82,13 @@
                   </h5>
                   <div class="nl__happy-customer-img d-flex mt-20">
                     <div class="nl__customer-img-wrap">
-                      <img src="/images/customer-1.jpg" alt="" />
+                      <img src="/images/customer-11.jpg" alt="" />
                     </div>
                     <div class="nl__customer-img-wrap">
-                      <img src="/images/customer-2.jpg" alt="" />
+                      <img src="/images/customer-21.jpg" alt="" />
                     </div>
                     <div class="nl__customer-img-wrap">
-                      <img src="/images/customer-3.jpg" alt="" />
+                      <img src="/images/customer-31.jpg" alt="" />
                     </div>
                   </div>
                 </div>
@@ -105,20 +105,21 @@
                   class="nl__hero-customer-info pt-30 pr-30 pb-30 pl-30 nl-bg-color-brown nl-border-radius-5 has_fade_anim"
                 >
                   <p class="text-white">
-                    Outsourcing can provide corporate businesses with several
-                    advantages, including cost savings, access to specialized
-                    expertise, increased efficiency
+                    Discover your ideal property effortlessly with our
+                    comprehensive listings for flats, shops, and plots. Find the
+                    perfect space to call home or invest in, all in one
+                    convenient platform.
                   </p>
                   <div
                     class="nl__hero-button-wrap mt-30 d-flex align-items-center justify-content-between"
                   >
                     <p
-                      class="text-white nl-fs-14 nl-fw-500 nl-lh-25 text-uppercase"
+                      class="text-white nl-fs-14 nl-fw-300 nl-lh-25 text-uppercase"
                     >
-                      send Now
+                      Inquiry Now
                     </p>
                     <a
-                      href="#"
+                      href="/contact"
                       class="nl__header-btn position-relative d-flex align-items-center"
                     >
                       <i class="nl-icon nl-icon-arrow-right text-white"></i>
@@ -150,17 +151,21 @@
           </div>
           <div class="nl__section-title mt-20 mb-30">
             <h2 class="nl-fs-48 nl-lh-62 text-white has_fade_anim">
-              Experience the Best in Real Estate Esate desin
+              Premier Properties Department
             </h2>
           </div>
           <div class="nl__section-description pe-xl-1">
             <p class="text-white has_fade_anim">
-              Outsourcing can provide corporate businesses with several
-              advantages, including cost savings, the access to specialized
-              expertise, increased
+              Welcome to our Premier Properties Department, where luxury meets
+              lifestyle. Explore our curated selection of exquisite homes,
+              prestigious commercial spaces, and prime land plots, meticulously
+              tailored to meet the discerning tastes of our clientele. Elevate
+              your living and investment aspirations with our unparalleled
+              portfolio of premium properties, setting new standards in
+              elegance, excellence, and exclusivity.
             </p>
           </div>
-          <div class="nl__section-button nl__section-home mt-45 has_fade_anim">
+          <!-- <div class="nl__section-button nl__section-home mt-45 has_fade_anim">
             <a
               href="#"
               class="text-white nl-fs-14 nl-fw-500 nl-lh-25 text-uppercase overflow-hidden d-inline-flex position-relative"
@@ -168,7 +173,7 @@
               <span class="position-relative z-1">Read More</span>
               <span class="nl__btn-hover-style"></span>
             </a>
-          </div>
+          </div> -->
         </div>
         <div class="col-xl-8">
           <div class="row g-30">
@@ -196,11 +201,11 @@
                 <h3
                   class="nl__service-title text-white nl-fs-28 nl-lh-36 mt-30 mb-10 has_fade_anim"
                 >
-                  Residential
+                  <nuxt-link to="/residential">Residential</nuxt-link>
                 </h3>
                 <p class="nl__service-info text-white has_fade_anim">
-                  Interior design involves the art and science of enhancing the
-                  an interior of a space to achieve a functional and aes
+                  Find your dream home with us. Browse our curated selection of
+                  residential properties today.
                 </p>
               </div>
             </div>
@@ -226,11 +231,11 @@
                 <h3
                   class="nl__service-title text-white nl-fs-28 nl-lh-36 mt-30 mb-10 has_fade_anim"
                 >
-                  Plots
+                  <nuxtLink to="/plot">Plot</nuxtLink>
                 </h3>
                 <p class="nl__service-info text-white has_fade_anim">
-                  Interior design involves the art and science of enhancing the
-                  an interior of a space to achieve a functional and aes
+                  Explore potential and possibility with our Plot Collection.
+                  Find the perfect land to shape your dreams.
                 </p>
               </div>
             </div>
@@ -256,11 +261,11 @@
                 <h3
                   class="nl__service-title text-white nl-fs-28 nl-lh-36 mt-30 mb-10 has_fade_anim"
                 >
-                  Commercial
+                  <nuxtLink to="/commercial">Commercial</nuxtLink>
                 </h3>
                 <p class="nl__service-info text-white has_fade_anim">
-                  Interior design involves the art and science of enhancing the
-                  an interior of a space to achieve a functional and aes
+                  Elevate your business with our Commercial Collection. Find the
+                  perfect space to thrive in.
                 </p>
               </div>
             </div>
@@ -382,7 +387,7 @@
                 <span class="nl-color-brown mr-10"
                   ><i class="nl-icon nl-icon-circle-check"></i
                 ></span>
-                Turning Dreams into Addresses
+                Trust our team of dedicated real estate experts.
               </li>
               <li
                 class="nl-color-black nl-font-heading nl-fs-18 nl-lh-24 has_fade_anim"
@@ -390,7 +395,7 @@
                 <span class="nl-color-brown mr-10"
                   ><i class="nl-icon nl-icon-circle-check"></i
                 ></span>
-                Where Every Home Tells a Story
+                Find your perfect match with personalized solutions.
               </li>
               <li
                 class="nl-color-black nl-font-heading nl-fs-18 nl-lh-24 has_fade_anim"
@@ -398,16 +403,34 @@
                 <span class="nl-color-brown mr-10"
                   ><i class="nl-icon nl-icon-circle-check"></i
                 ></span>
-                Your Key to Real Estate Success
+                Experience honesty and clarity throughout.
+              </li>
+              <li
+                class="nl-color-black nl-font-heading nl-fs-18 nl-lh-24 has_fade_anim"
+              >
+                <span class="nl-color-brown mr-10"
+                  ><i class="nl-icon nl-icon-circle-check"></i
+                ></span>
+                Count on us for outstanding support.
+              </li>
+              <li
+                class="nl-color-black nl-font-heading nl-fs-18 nl-lh-24 has_fade_anim"
+              >
+                <span class="nl-color-brown mr-10"
+                  ><i class="nl-icon nl-icon-circle-check"></i
+                ></span>
+                Your goals are our focus.
               </li>
             </ul>
           </div>
           <div class="nl__section-button mt-45 nl__button-brown has_fade_anim">
             <a
-              href="#"
+              href="/contact"
               class="nl-color-black nl-fs-14 nl-fw-500 nl-lh-25 text-uppercase overflow-hidden d-inline-flex position-relative"
             >
-              <span class="position-relative z-1">Send Now</span>
+              <!-- <nuxt-link to="/contact"> -->
+              <span class="position-relative z-1">Contact Us</span>
+              <!-- </nuxt-link> -->
               <span class="nl__btn-hover-style"></span>
             </a>
           </div>
@@ -467,14 +490,14 @@
             <h5
               class="nl-color-brown nl-fs-14 nl-fw-500 nl-lh-19 nl-ls-1 text-uppercase nl-font-body has_fade_anim"
             >
-              Property Details
+              Residential Details
             </h5>
           </div>
           <div
             class="nl__section-title pt-20 pb-60 m-auto nl__about-section-title"
           >
             <h2 class="nl-fs-48 nl-lh-62 nl-color-black has_fade_anim">
-              Unlocking doors to a better future Discover
+              Find your dream home with us
             </h2>
           </div>
         </div>
@@ -704,11 +727,14 @@
               <h2
                 class="nl-color-black nl-fs-48nl-lh-62 mb-15 has_fade_anim has_fade_anim"
               >
-                The Key to Real Estate Success
+                Your Gateway to Property Excellence
               </h2>
               <p class="nl-color-gray-800 has_fade_anim">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout
+                Welcome to Maniraj Properties, where we turn property
+                aspirations into reality. Explore our curated selection of
+                residential, commercial, and plot listings, meticulously
+                tailored to meet your needs. Ready to find your dream property?
+                Contact us today to start your journey.
               </p>
             </div>
           </div>
@@ -878,7 +904,7 @@
                       class="nl-icon nl-icon-home nl-color-brown nl-fs-36 mr-15"
                     ></i>
                     <h5 class="nl-color-black nl-fs-22 nl-lh-26">
-                      Detached Room
+                      Residential
                     </h5>
                   </div>
                 </div>
@@ -890,7 +916,7 @@
                     <i
                       class="nl-icon nl-icon-bed nl-color-brown nl-fs-36 mr-15"
                     ></i>
-                    <h5 class="nl-color-black nl-fs-22 nl-lh-26">x3</h5>
+                    <h5 class="nl-color-black nl-fs-22 nl-lh-26">x2, x3, x4</h5>
                   </div>
                 </div>
                 <div class="nl-feature-meta-item">
@@ -1006,11 +1032,14 @@
           </div>
           <p class="nl__counter-title nl-color-gray-800">Units</p>
         </div>
+      </div>
+      <br /><br />
+      <div class="nl__counter-wrap d-flex flex-wrap">
         <div class="nl__counter-item">
           <div
-            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82"
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
           >
-            <span class="odometer" data-count="10">{{
+            <span class="odometer" data-count="250">{{
               aboutUs.residential_property
             }}</span>
             <span class="suffix">+</span>
@@ -1021,9 +1050,9 @@
         </div>
         <div class="nl__counter-item">
           <div
-            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82"
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
           >
-            <span class="odometer" data-count="12">{{
+            <span class="odometer" data-count="250">{{
               aboutUs.commercial_property
             }}</span>
             <span class="suffix">+</span>
@@ -1032,9 +1061,9 @@
         </div>
         <div class="nl__counter-item">
           <div
-            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82"
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
           >
-            <span class="odometer" data-count="10">{{ aboutUs.plots }}</span>
+            <span class="odometer" data-count="250">{{ aboutUs.plots }}</span>
             <span class="suffix">+</span>
           </div>
           <p class="nl__counter-title nl-color-gray-800">Plots</p>
@@ -1382,10 +1411,6 @@ export default {
   components: {},
   data() {
     return {
-      banner: {},
-      category: {},
-      our_technology: {},
-      key_feature: {},
       residential: {},
       site: {},
       aboutUs: {},

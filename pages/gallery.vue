@@ -1,4 +1,38 @@
 <template>
+  <!--Bredcrumb menu start-->
+
+  <section class="nlv2_bredcrumb nl-bg1 pt-140 pb-140 nl-bg-color-black">
+    <div class="nlv2_bredcrumb_wrapper">
+      <div class="container">
+        <div class="nlv2_bredcrumb_wrapper_container">
+          <h2
+            class="nl-fs-48 nl-lh-62 nl-color-white nl-font-heading text-center nl-font-body pb-15 has_fade_anim"
+          >
+            Gallery
+          </h2>
+          <div
+            class="nlv2_bredcrumb_top nl-color-white nl-fs-18 nl-lh-30 d-flex gap-3 justify-content-center align-items-center has_fade_anim"
+          >
+            <a href="#" class="nl-color-white">Home</a>
+            <svg
+              width="9"
+              height="13"
+              viewBox="0 0 9 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 13C1.71875 13 1.46875 12.9062 1.28125 12.7188C0.875 12.3438 0.875 11.6875 1.28125 11.3125L5.5625 7L1.28125 2.71875C0.875 2.34375 0.875 1.6875 1.28125 1.3125C1.65625 0.90625 2.3125 0.90625 2.6875 1.3125L7.6875 6.3125C8.09375 6.6875 8.09375 7.34375 7.6875 7.71875L2.6875 12.7188C2.5 12.9062 2.25 13 2 13Z"
+                fill="white"
+              />
+            </svg>
+            <span class="">Gallery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Bredcrumb menu end-->
   <!-- Gallery Start-->
   <div class="nlv2_gallery nl-section-pb nl-bg-color-gray-100">
     <div class="nlv2_gallery_wrapper">

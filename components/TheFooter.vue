@@ -19,8 +19,7 @@
                     <p
                       class="nl-fs-18 nl-color-white-opacity nl-lh-30 pb-20 nl-font-body"
                     >
-                      Lorem Ipsum is simply dummy text of the real printing and
-                      typesetting
+                      RealEstate Realm: Your Pathway to Property Prosperity
                     </p>
                     <div class="nlv2_footer-iconwith">
                       <a
@@ -48,7 +47,7 @@
                     >
                       <span
                         class="nl-fs-18 nl-color-white nl-color-white-opacity"
-                        >Followrs:
+                        >Follow:
                       </span>
                       <a
                         :href="site.facebook_link"
@@ -89,9 +88,6 @@
                 </div>
               </div>
               <div
-                class="col-12 col-lg-1 col-xl-1 col-xxl-1 col-md-12 col-sm-12 d-none d-lg-block"
-              ></div>
-              <div
                 class="col-12 col-lg-12 col-xl-3 col-xxl-3 col-md-6 col-sm-12 nl-mtp"
               >
                 <div class="nl_footer_top_link nl-mobile-mt">
@@ -125,7 +121,6 @@
                   </ul>
                 </div>
               </div>
-
               <div
                 class="col-12 col-lg-12 col-xl-2 col-xxl-2 col-md-6 col-sm-12 nl-mtp"
               >
