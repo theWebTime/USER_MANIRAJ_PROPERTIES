@@ -119,18 +119,12 @@
       </div>
     </div>
     <br /><br /><br /><br />
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-8">
-          <div class="mb-40">
-            <p
-              class="nl-color-brown nl-fs-14 nl-font-body nl-lh-19 mb-20 text-uppercase has_fade_anim"
-            >
-              <h1>Residential Gallery</h1>
-            </p>
-          </div>
-        </div>
-      </div>
+    <div class="nlv2_searvice-top-part pb-60">
+      <p
+        class="nl-fs-14 nl-font-body nl-lh-19 text-uppercase nl-color-brown nl-fw-500 nl-ls-1 pb-20 text-center"
+      >
+        Residential Gallery
+      </p>
     </div>
     <!-- Gallery Start-->
     <div class="nlv2_gallery nl-section-pb nl-bg-color-gray-100">
@@ -184,7 +178,7 @@
               <h2
                 class="nl-fs-48 nl-font-heading nl-lh-62 nl-color-black nl-width-45 m-auto text-center has_fade_anim"
               >
-                Turning Estate properties into Design
+                Signature Amenities: Redefining Comfort and Convenience
               </h2>
             </div>
             <div class="nlv2_searvice-box">
@@ -304,6 +298,92 @@
     <!-- Searvice Section End -->
   </section>
   <!-- ns-project End  -->
+  <section class="nlv2_contact_from nl-bg-color-white pb-85">
+    <div class="nlv2_contact_fromwrapper">
+      <div class="container container-1290">
+        <div class="nlv2_contact_from_wrapper_container">
+          <div class="row">
+            <div class="col-lg-12">
+              <h2
+                class="nl-fs-48 nl-lh-62 nl-color-black text-center has_fade_anim"
+              >
+                Inquiry For This Property
+              </h2>
+              <form
+                class="nb-contact-form pt-50 has_fade_anim"
+                ref="form"
+                @submit.prevent="submitForm()"
+              >
+                <div
+                  class="alert alert-danger alert-dismissible fade show"
+                  role="alert"
+                  v-if="isError"
+                >
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Close"
+                  ></button>
+                  <strong>Error!</strong> {{ errorMessage }}.
+                  <ul v-for="(value, key) in errors" :key="key">
+                    <li v-for="(value1, key1) in value" :key="key1">
+                      -> {{ value1 }}
+                    </li>
+                  </ul>
+                  {{ value }}
+                </div>
+
+                <div class="row g-30">
+                  <div class="col-lg-6 has_fade_anim">
+                    <input
+                      type="text"
+                      name="client_name"
+                      class="nb-contact-form-inuut"
+                      placeholder="Your name"
+                      required=""
+                      v-model="insertData.client_name"
+                    />
+                  </div>
+                  <div class="col-lg-6 has_fade_anim">
+                    <input
+                      name="client_number"
+                      type="number"
+                      class="nb-contact-form-inuut"
+                      placeholder="Your phone"
+                      required=""
+                      v-model="insertData.client_number"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="nlv2_newsleatter-right nb-contact-form-button d-flex justify-content-center"
+                >
+                  <div class="nl__section-button nl-about-button has_fade_anim">
+                    <button
+                      class="nl-fs-14 nl-fw-500 nl-lh-25 text-uppercase overflow-hidden d-lg-inline-flex position-relative nl-color-black rounded-0 pt-20 pb-20"
+                      name="submit"
+                      type="submit"
+                    >
+                      <span class="position-relative z-1">Inquiry Now</span>
+                      <span class="nl__btn-hover-style"></span></button
+                    ><br /><br />
+                    <!-- <a
+                      href="#"
+                      class="nl-fs-14 nl-fw-500 nl-lh-25 text-uppercase overflow-hidden d-lg-inline-flex position-relative nl-color-black rounded-0 pt-20 pb-20"
+                    >
+                      <span class="position-relative z-1">Send a messege</span>
+                      <span class="nl__btn-hover-style"></span>
+                    </a> -->
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 <script>
 export default {
@@ -311,6 +391,14 @@ export default {
   components: {},
   data() {
     return {
+      insertData: {
+        client_name: "",
+        client_number: "",
+        residential_id: this.$route.params.id,
+      },
+      isError: false,
+      errorMessage: "",
+      errors: {},
       residential: {},
       residential_show: this.$route.params.id,
     };
@@ -320,6 +408,10 @@ export default {
     this.fetchDataResidential();
   },
   methods: {
+    resetValues() {
+      this.insertData.client_name = "";
+      this.insertData.client_number = "";
+    },
     fetchDataResidential() {
       api()
         .post("user-side/show-all-residential-detail", {
@@ -332,6 +424,24 @@ export default {
         })
         .catch((err) => {
           console.log(err);
+        });
+    },
+    submitForm() {
+      api()
+        .post("/residential-inquiry-store", this.insertData)
+        .then((res) => {
+          if (res.data.success) {
+            this.resetValues();
+          } else {
+            this.$toast.error(res.data.message);
+            this.errors = res.data.data;
+            this.errorMessage = res.data.message;
+            this.isError = true;
+          }
+          this.isSubmit = false;
+        })
+        .catch((e) => {
+          this.isError = true;
         });
     },
   },

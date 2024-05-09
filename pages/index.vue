@@ -957,30 +957,6 @@
                   <span>Million Square Feet</span>
                   <span>{{ aboutUs.million_square_feet }}</span>
                 </div>
-                <div
-                  class="nl__features-additional-meta-item nl-color-gray-800 d-flex align-items-center justify-content-between has_fade_anim"
-                >
-                  <span>Units</span>
-                  <span>{{ aboutUs.units }}</span>
-                </div>
-                <div
-                  class="nl__features-additional-meta-item nl-color-gray-800 d-flex align-items-center justify-content-between has_fade_anim"
-                >
-                  <span>Residential Property</span>
-                  <span>{{ aboutUs.residential_property }}</span>
-                </div>
-                <div
-                  class="nl__features-additional-meta-item nl-color-gray-800 d-flex align-items-center justify-content-between has_fade_anim"
-                >
-                  <span>Commercial Property</span>
-                  <span>{{ aboutUs.commercial_property }}</span>
-                </div>
-                <div
-                  class="nl__features-additional-meta-item nl-color-gray-800 d-flex align-items-center justify-content-between has_fade_anim"
-                >
-                  <span>Plots</span>
-                  <span>{{ aboutUs.plots }}</span>
-                </div>
               </div>
             </div>
           </div>
