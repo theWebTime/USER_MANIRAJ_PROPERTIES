@@ -962,7 +962,7 @@
           </div>
           <div class="col-lg-6">
             <div class="nl__feature-img has_image_zoom image-hover">
-              <img src="/images/featured.png" alt="" />
+              <img src="/images/4.jpg" alt="" />
             </div>
           </div>
         </div>
@@ -1057,22 +1057,22 @@
           <div class="row g-30">
             <div class="col-lg-4 col-md-6">
               <div class="nlv2_gallery_big has_fade_anim image-hover">
-                <img src="/images/Gallery/gallery03.jpg" alt="" />
+                <img src="/images/5.jpg" alt="" />
               </div>
             </div>
             <div class="col-lg-4 col-md-6">
               <div class="nlv2_gallery_small has_fade_anim">
                 <div class="nlv2_gallery_small-midoll image-hover">
-                  <img src="/images/Gallery/gallery01.jpg" alt="" />
+                  <img src="/images/6.jpg" alt="" />
                 </div>
                 <div class="nlv2_gallery_small-midoll image-hover">
-                  <img src="/images/Gallery/gallery04.jpg" alt="" />
+                  <img src="/images/3.png" alt="" />
                 </div>
               </div>
             </div>
             <div class="col-lg-4 col-md-12">
               <div class="nlv2_gallery_big has_fade_anim image-hover">
-                <img src="/images/Gallery/gallery02.jpg" alt="" />
+                <img src="/images/7.jpg" alt="" />
               </div>
             </div>
           </div>
