@@ -802,7 +802,7 @@
                       class="nl__section-button nl-about-button has_fade_anim"
                     >
                       <a
-                        href="/contact-us"
+                        href="/contact"
                         class="nl-fs-14 nl-fw-500 nl-lh-25 text-uppercase overflow-hidden d-lg-inline-flex position-relative nl-color-black"
                       >
                         <span class="position-relative z-1">Contact Us</span>
