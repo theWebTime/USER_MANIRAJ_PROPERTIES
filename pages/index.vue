@@ -73,7 +73,7 @@
                   <div
                     class="nl__header-counter-number nl-color-brown nl-fs-32 nl-lh-44 nl-font-heading d-flex align-items-center"
                   >
-                    <span class="odometer" data-count="36">1</span>K+
+                    <span class="odometer" data-count="36">2</span>K+
                   </div>
                   <h5
                     class="nl__happy-customer nl-fs-16 nl-font-body nl-fw-500 nl-lh-22 nl-color-black anim-reveal-line has_char_anim"
@@ -927,7 +927,7 @@
                     <i
                       class="nl-icon nl-icon-bathtub nl-color-brown nl-fs-36 mr-15"
                     ></i>
-                    <h5 class="nl-color-black nl-fs-22 nl-lh-26">x3</h5>
+                    <h5 class="nl-color-black nl-fs-22 nl-lh-26">x2, x3, x4</h5>
                   </div>
                 </div>
                 <div class="nl-feature-meta-item">
@@ -938,7 +938,9 @@
                     <i
                       class="nl-icon nl-icon-sqft nl-color-brown nl-fs-36 mr-15"
                     ></i>
-                    <h5 class="nl-color-black nl-fs-22 nl-lh-26">500 sqft</h5>
+                    <h5 class="nl-color-black nl-fs-22 nl-lh-26">
+                      150 to 500 sq.yard
+                    </h5>
                   </div>
                 </div>
               </div>
