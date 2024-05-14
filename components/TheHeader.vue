@@ -5,7 +5,7 @@
       class="nl__main-header d-flex align-items-center justify-content-xl-start justify-content-between p-3 p-xl-0"
     >
       <div class="nl__header-one-logo" v-if="site.logo">
-        <a href="index.html">
+        <nuxt-link to="/">
           <img
             :src="site.logo"
             alt=""
@@ -13,20 +13,13 @@
             width="100"
             style="border-radius: 50px"
           />
-        </a>
+        </nuxt-link>
       </div>
       <div
         class="nl__nav-and-social d-flex justify-content-between align-items-center d-none d-xl-flex"
       >
         <nav class="nl-navmenu text-center ul-li d-none d-lg-block">
           <ul>
-            <!-- <li class="has-submenu">
-                                <a href="javascript:void(0)">Home</a>
-                                <ul class="submenu-wrapper submenu-wrapperv1">
-                                    <li><a href="index.html">Home 1</a></li>
-                                    <li><a href="index2.html">Home 2</a></li>
-                                </ul>
-                            </li> -->
             <li><nuxt-link to="/">Home</nuxt-link></li>
 
             <li><nuxt-link to="/about-us">About Us</nuxt-link></li>
@@ -76,62 +69,43 @@
           >
         </div>
       </div>
-      <button type="button" class="header-toggle mobile-menu-toggle d-xl-none">
+      <button
+        type="button"
+        class="header-toggle mobile-menu-toggle d-xl-none"
+        @click="event()"
+      >
         <span class="offcanvas_border_one"></span>
         <span></span>
       </button>
     </div>
 
     <!--mobile menu start-->
-    <div class="mobile-menu ul-li">
-      <a href="javascript:void(0)" class="close"
+    <div class="mobile-menu ul-li" :class="open ? 'active' : ''">
+      <a @click="event()" class="close"
         ><i class="isax icon-close-circle1"></i
       ></a>
-      <a href="index.html" class="logo"
+      <!-- <a href="index.html" class="logo"
         ><img src="/images/logov2.svg" alt="logo" class="img-fluid"
-      /></a>
+      /></a> -->
+      <nuxt-link to="/" class="logo">
+        <img
+          :src="site.logo"
+          alt=""
+          height="100"
+          width="100"
+          style="border-radius: 50px"
+        />
+      </nuxt-link>
       <ul class="mobile-nav-menu">
-        <li class="has-submenu">
-          <a href="javascript:void(0)">Home</a>
-          <i class="isax icon-arrow-down1"></i>
-          <ul class="submenu-wrapper">
-            <li><a href="index.html">Home 1</a></li>
-            <li><a href="index2.html">Home 2</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html">About</a></li>
-        <li class="has-submenu">
-          <a href="project.html">Project</a>
-          <i class="isax icon-arrow-down1"></i>
-          <ul class="submenu-wrapper">
-            <li><a href="project.html">Projects</a></li>
-            <li><a href="project-details.html">Project Details</a></li>
-          </ul>
-        </li>
-        <li class="has-submenu">
-          <a href="Service.html">Services</a>
-          <i class="isax icon-arrow-down1"></i>
-          <ul class="submenu-wrapper">
-            <li><a href="Service.html">Services</a></li>
-            <li><a href="service-details.html">Service Details</a></li>
-          </ul>
-        </li>
-        <li class="has-submenu">
-          <a href="javascript:void(0)">Pages</a>
-          <i class="isax icon-arrow-down1"></i>
-          <ul class="submenu-wrapper">
-            <li><a href="Faq.html">Faq</a></li>
-          </ul>
-        </li>
-        <li class="has-submenu">
-          <a href="javascript:void(0)">Blog</a>
-          <i class="isax icon-arrow-down1"></i>
-          <ul class="submenu-wrapper">
-            <li><a href="blog.html">Blog List</a></li>
-            <li><a href="blog-details.html">Blog Details</a></li>
-          </ul>
-        </li>
-        <li><a href="Contact.html">Contact</a></li>
+        <li><nuxt-link to="/">Home</nuxt-link></li>
+
+        <li><nuxt-link to="/about-us">About Us</nuxt-link></li>
+        <li><nuxtLink to="/residential">Residential</nuxtLink></li>
+        <li><nuxtLink to="/commercial">Commercial</nuxtLink></li>
+        <li><nuxtLink to="/plot">Plot</nuxtLink></li>
+        <li><nuxt-link to="/gallery">Gallery</nuxt-link></li>
+        <li><nuxt-link to="/ourTeam">Our Team</nuxt-link></li>
+        <li><nuxt-link to="/contact">Contact Us</nuxt-link></li>
       </ul>
     </div>
     <!--mobile menu end-->
