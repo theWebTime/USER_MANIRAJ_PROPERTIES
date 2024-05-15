@@ -68,7 +68,7 @@
             </a></span
           >
         </div> -->
-        <div class="ns-service-info-contain mb-30 has_fade_anim">
+        <div class="ns-service-info-contain mb-30 has_fade_anim" v-if="item.square_yard">
           <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black mb-10">
             <i class="nl-icon nl-icon-circle-check"></i>
 
@@ -76,12 +76,12 @@
           </h4>
 
           <p
-            class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim"
+            class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim" 
           >
             {{ item.square_yard }}
           </p>
         </div>
-        <div class="ns-service-info-contain mb-30 has_fade_anim">
+        <div class="ns-service-info-contain mb-30 has_fade_anim" v-if="item.status_name">
           <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black mb-10">
             <i class="nl-icon nl-icon-circle-check"></i>
 
@@ -89,12 +89,12 @@
           </h4>
 
           <p
-            class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim"
+            class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim" 
           >
             {{ item.status_name }}
           </p>
         </div>
-        <div class="ns-service-info-contain mb-30 has_fade_anim">
+        <div class="ns-service-info-contain mb-30 has_fade_anim" v-if="item.location">
           <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black mb-10">
             <i class="nl-icon nl-icon-circle-check"></i>
 
@@ -102,12 +102,12 @@
           </h4>
 
           <p
-            class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim"
+            class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim" 
           >
             {{ item.location }}
           </p>
         </div>
-        <div class="ns-service-info-contain mb-30 has_fade_anim">
+        <div class="ns-service-info-contain mb-30 has_fade_anim" v-if="item.iframe">
           <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black mb-10">
             <i class="nl-icon nl-icon-circle-check"></i>
 
@@ -115,7 +115,7 @@
           </h4>
 
           <p
-            class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim"
+            class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim" 
           >
             <iframe width="800" height="230" :src="item.iframe"></iframe>
           </p>

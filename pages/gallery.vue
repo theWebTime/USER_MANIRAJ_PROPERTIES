@@ -44,7 +44,10 @@
               v-for="(item, index) in gallery"
               :key="index"
             >
-              <div class="nlv2_gallery_big has_fade_anim image-hover">
+              <div
+                class="nlv2_gallery_big has_fade_anim image-hover"
+                v-if="item.data"
+              >
                 <img :src="item.data" alt="" />
               </div>
             </div>

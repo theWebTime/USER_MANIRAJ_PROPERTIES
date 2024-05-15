@@ -38,10 +38,16 @@
         </nav>
 
         <div class="nl__header-social-item">
-          <a :href="site.facebook_link" target="_blank"
+          <a
+            v-if="site.facebook_link"
+            :href="site.facebook_link"
+            target="_blank"
             ><i class="nl-icon nl-icon-facebook nl-color-black"></i
           ></a>
-          <a :href="site.instagram_link" target="_blank"
+          <a
+            v-if="site.instagram_link"
+            :href="site.instagram_link"
+            target="_blank"
             ><i class="nl-icon nl-icon-instagram nl-color-black"></i
           ></a>
           <!-- <a href="#"
@@ -60,7 +66,7 @@
             <i class="nl-icon nl-icon-call"></i>
           </a>
         </div>
-        <div class="nl__header-number">
+        <div class="nl__header-number" v-if="site.phone_number1">
           <h5 class="nl-fs-18 nl-lh-30 text-white">Need Help?</h5>
           <a
             :href="'tel:' + site.phone_number1"

@@ -66,7 +66,10 @@
           <div
             class="nl__property-item zoom-in-pora overflow-hidden has_fade_anim"
           >
-            <div class="nl__faq-banner-img has_fade_anim image-hover">
+            <div
+              class="nl__faq-banner-img has_fade_anim image-hover"
+              v-if="item.image"
+            >
               <img :src="item.image" alt="" />
               <!-- <div
                 class="nl__featured-badge nl-font-heading nl-fs-18 nl-lh-24 nl-color-black nl-border-radius-5 bg-white"
@@ -81,13 +84,14 @@
                 <div
                   class="nl__property-name-and--price d-flex align-items-center justify-content-between justify-content-between"
                 >
-                  <div class="nl__property-name">
+                  <div class="nl__property-name" v-if="item.name">
                     <h4 class="nl-color-black nl-fs-22 nl-lh-26">
                       {{ item.name }}
                     </h4>
                   </div>
                   <div
                     class="nl__property-price nl-font-heading nl-fs-18 nl-lh-24 nl-color-black nl-bg-color-gray-100 pt-10 pr-10 pb-10 pl-10"
+                    v-if="item.role"
                   >
                     {{ item.role }}
                   </div>

@@ -47,23 +47,26 @@
               >
                 <div
                   class="nlv2_dsign-box-main nl-bg-color-white position-relative nl-border-radius-5 nl-button-hover image-hover"
+                  v-if="item.image"
                 >
-                  <NuxtLink :to="'/residential/' + item.id">
+                  <nuxt-link :to="'/residential/' + item.id">
                     <img :src="item.image" alt=""
-                  /></NuxtLink>
+                  /></nuxt-link>
                   <div
                     class="nlv2_dsign-box-content position-absolute nl-bg-color-white mr-20 ml-20 nl-border-radius-5 pl-30 pt-30 pb-30"
                   >
                     <a
                       href="#"
                       class="nl-fs-22 nl-font-heading nl-lh-26 nl-color-black has_fade_anim"
+                      v-if="item.name"
                     >
-                      <NuxtLink :to="'/residential/' + item.id">
+                      <nuxt-link :to="'/residential/' + item.id">
                         {{ item.name }}
-                      </NuxtLink>
+                      </nuxt-link>
                     </a>
                     <p
                       class="nl-fs-18 nl-font-body nl-lh-26 nl-color-gray-800 has_fade_anim"
+                      v-if="item.location"
                     >
                       {{ item.location }}
                     </p>

@@ -56,8 +56,11 @@
         <div class="col-12 col-md-5" v-if="residential.residentialDetail">
           <div class="ns-project-category has_fade_anim">
             <ul>
-              <li>
-                <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
+              <li v-if="residential.residentialDetail.no_bhk">
+                <p
+                  class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800"
+                  v-if="residential.residentialDetail.no_bhk"
+                >
                   No BHK
                 </p>
 
@@ -66,7 +69,7 @@
                 </h4>
               </li>
 
-              <li>
+              <li v-if="residential.residentialDetail.square_yard">
                 <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
                   Square Yard
                 </p>
@@ -76,7 +79,27 @@
                 </h4>
               </li>
 
-              <li>
+              <li v-if="residential.residentialDetail.price">
+                <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
+                  Price
+                </p>
+
+                <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black">
+                  {{ residential.residentialDetail.price }}
+                </h4>
+              </li>
+
+              <li v-if="residential.residentialDetail.possession">
+                <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
+                  Possession
+                </p>
+
+                <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black">
+                  {{ residential.residentialDetail.possession }}
+                </h4>
+              </li>
+
+              <li v-if="residential.residentialDetail.status_name">
                 <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
                   Status
                 </p>
@@ -86,7 +109,7 @@
                 </h4>
               </li>
 
-              <li>
+              <li v-if="residential.residentialDetail.shop_square_feet">
                 <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
                   Shop Square Feet
                 </p>
@@ -95,7 +118,7 @@
                   {{ residential.residentialDetail.shop_square_feet }}
                 </h4>
               </li>
-              <li>
+              <li v-if="residential.residentialDetail.location">
                 <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
                   Location
                 </p>
@@ -137,7 +160,10 @@
                 v-for="(item, index) in residential.residentialGallery"
                 :key="index"
               >
-                <div class="nlv2_gallery_big has_fade_anim image-hover">
+                <div
+                  class="nlv2_gallery_big has_fade_anim image-hover"
+                  v-if="item.data"
+                >
                   <img :src="item.data" alt="" />
                 </div>
               </div>
@@ -199,10 +225,14 @@
 
                     <h6
                       class="nl-fs-22 nl-font-heading nl-lh-26 nl-color-black pt-30 pb-20"
+                      v-if="item.name"
                     >
                       {{ item.name }}
                     </h6>
-                    <p class="nl-fs-18 nl-font-body nl-lh-26 nl-color-gray-800">
+                    <p
+                      class="nl-fs-18 nl-font-body nl-lh-26 nl-color-gray-800"
+                      v-if="item.description"
+                    >
                       {{ item.description }}
                     </p>
                   </div>
