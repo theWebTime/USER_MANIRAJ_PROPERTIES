@@ -52,20 +52,20 @@
             </p>
           </div>
         </div>
-
         <div class="col-12 col-md-5" v-if="residential.residentialDetail">
           <div class="ns-project-category has_fade_anim">
             <ul>
-              <li v-if="residential.residentialDetail.no_bhk">
-                <p
-                  class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800"
-                  v-if="residential.residentialDetail.no_bhk"
-                >
+              <li v-if="residential.residentialProperty">
+                <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
                   No BHK
                 </p>
 
-                <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black">
-                  {{ residential.residentialDetail.no_bhk }}
+                <h4
+                  class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black"
+                  v-for="(item, index) in residential.residentialProperty"
+                  :key="index"
+                >
+                  {{ item.no_bhk }}
                 </h4>
               </li>
 
