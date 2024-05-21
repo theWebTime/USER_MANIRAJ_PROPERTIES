@@ -74,7 +74,10 @@
                     >
                       Address
                     </h4>
-                    <p class="nl-fs-18 nl-color-gray-800 nl-lh-30 nl-font-body">
+                    <p
+                      class="nl-fs-18 nl-color-gray-800 nl-lh-30 nl-font-body"
+                      v-if="site.address"
+                    >
                       {{ site.address }}
                     </p>
                   </div>
@@ -113,7 +116,11 @@
                     >
                       Email Address
                     </h4>
-                    <a :href="'mailto:' + site.email1" target="_blank">
+                    <a
+                      v-if="site.email1"
+                      :href="'mailto:' + site.email1"
+                      target="_blank"
+                    >
                       <p
                         class="nl-fs-18 nl-color-gray-800 nl-lh-30 nl-font-body"
                       >
@@ -156,7 +163,10 @@
                     >
                       Phone Number
                     </h4>
-                    <a :href="'tel:' + site.phone_number1">
+                    <a
+                      v-if="site.phone_number1"
+                      :href="'tel:' + site.phone_number1"
+                    >
                       <p
                         class="nl-fs-18 nl-color-gray-800 nl-lh-30 nl-font-body"
                       >

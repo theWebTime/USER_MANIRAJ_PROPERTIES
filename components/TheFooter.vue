@@ -23,6 +23,7 @@
                     </p>
                     <div class="nlv2_footer-iconwith">
                       <a
+                        v-if="site.email1"
                         :href="'mailto:' + site.email1"
                         target="_blank"
                         class="nl-color-white-opacity d-flex align-content-center pb-20"
@@ -33,6 +34,7 @@
                         <span>{{ site.email1 }}</span></a
                       >
                       <a
+                        v-if="site.phone_number2"
                         :href="'tel:' + site.phone_number2"
                         class="nl-color-white-opacity d-flex align-content-center pb-20"
                       >
@@ -50,6 +52,7 @@
                         >Follow:
                       </span>
                       <a
+                        v-if="site.facebook_link"
                         :href="site.facebook_link"
                         target="_blank"
                         class="nl-color-white-opacity nl-button-hover overflow-hidden"
@@ -67,6 +70,7 @@
                           ></i></span
                       ></a> -->
                       <a
+                        v-if="site.instagram_link"
                         :href="site.instagram_link"
                         target="_blank"
                         class="nl-color-white-opacity nl-button-hover overflow-hidden"

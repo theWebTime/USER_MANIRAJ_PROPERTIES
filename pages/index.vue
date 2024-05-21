@@ -73,7 +73,7 @@
                   <div
                     class="nl__header-counter-number nl-color-brown nl-fs-32 nl-lh-44 nl-font-heading d-flex align-items-center"
                   >
-                    <span class="odometer" data-count="36">1</span>K+
+                    <span class="odometer" data-count="36">2</span>K+
                   </div>
                   <h5
                     class="nl__happy-customer nl-fs-16 nl-font-body nl-fw-500 nl-lh-22 nl-color-black anim-reveal-line has_char_anim"
@@ -351,7 +351,10 @@
       <div class="row">
         <div class="col-lg-5 pe-lg-0">
           <div class="nl__about-banner-img">
-            <div class="nl__about-banner-img-sub image-hover has_fade_anim">
+            <div
+              class="nl__about-banner-img-sub image-hover has_fade_anim"
+              v-if="aboutUs.image"
+            >
               <img :src="aboutUs.image" alt="" />
             </div>
           </div>
@@ -367,12 +370,15 @@
               About Us
             </h5>
           </div>
-          <div class="nl__section-title mt-20 mb-20 has_fade_anim">
+          <div
+            class="nl__section-title mt-20 mb-20 has_fade_anim"
+            v-if="aboutUs.title"
+          >
             <h2 class="nl-fs-48 nl-lh-62 nl-color-black has_fade_anim">
               {{ aboutUs.title }}
             </h2>
           </div>
-          <div class="nl__section-description">
+          <div class="nl__section-description" v-if="aboutUs.description">
             <p
               v-if="aboutUs"
               class="nl-color-gray-800 has_fade_anim"
@@ -512,7 +518,9 @@
             class="nl__property-item zoom-in-pora overflow-hidden has_fade_anim"
           >
             <div class="nl__faq-banner-img has_fade_anim image-hover">
-              <img :src="item.image" alt="" />
+              <nuxt-link :to="'/residential/' + item.id">
+                <img v-if="item.image" :src="item.image" alt="" />
+              </nuxt-link>
               <div
                 class="nl__featured-badge nl-font-heading nl-fs-18 nl-lh-24 nl-color-black nl-border-radius-5 bg-white"
               >
@@ -526,19 +534,22 @@
                 <div
                   class="nl__property-name-and--price d-flex align-items-center justify-content-between justify-content-between"
                 >
-                  <div class="nl__property-name">
-                    <h4 class="nl-color-black nl-fs-22 nl-lh-26">
-                      {{ item.name }}
-                    </h4>
+                  <div class="nl__property-name" v-if="item.name">
+                    <nuxt-link :to="'/residential/' + item.id">
+                      <h4 class="nl-color-black nl-fs-22 nl-lh-26">
+                        {{ item.name }}
+                      </h4>
+                    </nuxt-link>
                   </div>
                   <div
                     class="nl__property-price nl-font-heading nl-fs-18 nl-lh-24 nl-color-black nl-bg-color-gray-100 pt-10 pr-10 pb-10 pl-10"
                   >
-                    $5500/m
+                    Rs.{{ item.price }}
                   </div>
                 </div>
                 <div
                   class="nl__property-location d-flex align-items-center nl-color-gray-800 mt-20"
+                  v-if="item.location"
                 >
                   <i class="nl-icon nl-icon-location-marker nl-color-black"></i>
                   <span>{{ item.location }}</span>
@@ -558,6 +569,7 @@
                   </div> -->
                   <div
                     class="nl__property-meta-item nl-color-gray-800 d-flex align-items-center"
+                    v-if="item.square_yard"
                   >
                     <i class="nl-icon nl-icon-sqft nl-color-black"></i>
                     <span>{{ item.square_yard }} Sq yd</span>
@@ -927,7 +939,7 @@
                     <i
                       class="nl-icon nl-icon-bathtub nl-color-brown nl-fs-36 mr-15"
                     ></i>
-                    <h5 class="nl-color-black nl-fs-22 nl-lh-26">x3</h5>
+                    <h5 class="nl-color-black nl-fs-22 nl-lh-26">x2, x3, x4</h5>
                   </div>
                 </div>
                 <div class="nl-feature-meta-item">
@@ -938,7 +950,9 @@
                     <i
                       class="nl-icon nl-icon-sqft nl-color-brown nl-fs-36 mr-15"
                     ></i>
-                    <h5 class="nl-color-black nl-fs-22 nl-lh-26">500 sqft</h5>
+                    <h5 class="nl-color-black nl-fs-22 nl-lh-26">
+                      150 to 500 sq.yard
+                    </h5>
                   </div>
                 </div>
               </div>
@@ -980,6 +994,7 @@
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+            v-if="aboutUs.hand_of_experience"
           >
             <span class="odometer" data-count="250">{{
               aboutUs.hand_of_experience
@@ -991,6 +1006,7 @@
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+            v-if="aboutUs.million_square_feet"
           >
             <span class="odometer" data-count="250">{{
               aboutUs.million_square_feet
@@ -1002,6 +1018,7 @@
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+            v-if="aboutUs.units"
           >
             <span class="odometer" data-count="250">{{ aboutUs.units }}</span>
             <span class="suffix">+</span>
@@ -1014,6 +1031,7 @@
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+            v-if="aboutUs.residential_property"
           >
             <span class="odometer" data-count="250">{{
               aboutUs.residential_property
@@ -1027,6 +1045,7 @@
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+            v-if="aboutUs.commercial_property"
           >
             <span class="odometer" data-count="250">{{
               aboutUs.commercial_property
@@ -1038,6 +1057,7 @@
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+            v-if="aboutUs.plots"
           >
             <span class="odometer" data-count="250">{{ aboutUs.plots }}</span>
             <span class="suffix">+</span>
@@ -1587,31 +1607,34 @@ export default {
 // }),
 </script>
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted } from "vue";
 
-// onMounted(() => {
-//   Promise.all([
-//     import("/js/jquery.js"),
-//     import("/js/bootstrap.bundle.min.js"),
-//     import("/js/lity.min.js"),
-//     import("/js/gsap.min.js"),
-//     import("/js/locomotive-scroll.min.js"),
-//     import("/js/ScrollTrigger.min.js"),
-//     import("/js/SplitText.min.js"),
-//     import("/js/marquee.min.js"),
-//     import("/js/swiper-bundle.min.js"),
-//     import("/js/appear.js"),
-//     import("/js/odometer.min.js"),
-//     import("/js/count.js"),
-//     import("/js/ScrollToPlugin.min.js"),
-//     import('/js/script.js'),
-//     import('/js/ThemeAnim.js')
-//   ]).then(() => {
-//     // All scripts have been loaded
-//     console.log('All scripts have been loaded');
-//   }).catch(error => {
-//     // Handle errors if any script fails to load
-//     console.error('Error loading scripts:', error);
-//   });
-// })
+onMounted(() => {
+  import("/js/jquery.js");
+  import("/js/bootstrap.bundle.min.js");
+  import("/js/lity.min.js");
+  import("/js/gsap.min.js");
+  import("/js/locomotive-scroll.min.js");
+  import("/js/ScrollTrigger.min.js");
+  import("/js/SplitText.min.js");
+  import("/js/marquee.min.js");
+  import("/js/swiper-bundle.min.js");
+  import("/js/appear.js");
+  import("/js/odometer.min.js");
+  import("/js/count.js");
+  import("/js/ScrollToPlugin.min.js");
+  import("/js/script.js");
+
+  import("/js/jquery.js")
+    .then((module) => {
+      console.log("jQuery loaded:", module);
+    })
+    .catch((error) => {
+      console.error("Error loading jQuery:", error);
+    });
+  // Access configuration defined in nuxt.config.js
+  console.log("baseURL:");
+
+  // Your JavaScript code here
+});
 </script>

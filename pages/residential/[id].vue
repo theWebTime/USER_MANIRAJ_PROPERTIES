@@ -52,21 +52,24 @@
             </p>
           </div>
         </div>
-
         <div class="col-12 col-md-5" v-if="residential.residentialDetail">
           <div class="ns-project-category has_fade_anim">
             <ul>
-              <li>
+              <li v-if="residential.residentialProperty">
                 <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
                   No BHK
                 </p>
 
-                <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black">
-                  {{ residential.residentialDetail.no_bhk }}
+                <h4
+                  class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black"
+                  v-for="(item, index) in residential.residentialProperty"
+                  :key="index"
+                >
+                  {{ item.no_bhk }}
                 </h4>
               </li>
 
-              <li>
+              <li v-if="residential.residentialDetail.square_yard">
                 <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
                   Square Yard
                 </p>
@@ -76,7 +79,27 @@
                 </h4>
               </li>
 
-              <li>
+              <li v-if="residential.residentialDetail.price">
+                <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
+                  Price
+                </p>
+
+                <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black">
+                  {{ residential.residentialDetail.price }}
+                </h4>
+              </li>
+
+              <li v-if="residential.residentialDetail.possession">
+                <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
+                  Possession
+                </p>
+
+                <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black">
+                  {{ residential.residentialDetail.possession }}
+                </h4>
+              </li>
+
+              <li v-if="residential.residentialDetail.status_name">
                 <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
                   Status
                 </p>
@@ -86,7 +109,7 @@
                 </h4>
               </li>
 
-              <li>
+              <li v-if="residential.residentialDetail.shop_square_feet">
                 <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
                   Shop Square Feet
                 </p>
@@ -95,7 +118,7 @@
                   {{ residential.residentialDetail.shop_square_feet }}
                 </h4>
               </li>
-              <li>
+              <li v-if="residential.residentialDetail.location">
                 <p class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800">
                   Location
                 </p>
@@ -123,25 +146,80 @@
       <p
         class="nl-fs-14 nl-font-body nl-lh-19 text-uppercase nl-color-brown nl-fw-500 nl-ls-1 pb-20 text-center"
       >
-        Residential Gallery
+        Residential Floors
       </p>
     </div>
-    <!-- Gallery Start-->
-    <div class="nlv2_gallery nl-section-pb nl-bg-color-gray-100">
-      <div class="nlv2_gallery_wrapper">
-        <div class="nlv2_gallery_container pl-90 pr-90">
-          <div class="nlv2_gallery_wrapper_container">
-            <div class="row g-30">
-              <div
-                class="col-lg-4 col-md-6"
-                v-for="(item, index) in residential.residentialGallery"
-                :key="index"
-              >
-                <div class="nlv2_gallery_big has_fade_anim image-hover">
-                  <img :src="item.data" alt="" />
+    <div
+      class="container"
+      v-for="(item, index) in residential.residentialFloor"
+      :key="index"
+    >
+      <br /><br /><br />
+      <div
+        class="nlv2_blog_single_content pt-40 pb-35 pl-40 pr-40 nl-bg-color-gray-100 nl-border-radius-5 has_fade_anim"
+      >
+        <!-- <div class="nlv2_blog_single_meta mb-20">
+          <span class="nl_animation_title_main"
+            ><a
+              href="#"
+              class="nl-fs-18 nl-color-black nl-lh-26 nl-font-heading"
+              >Type Of Property</a
+            ></span
+          >
+          <span class="nl_animation_title_main"
+            ><a
+              href="#"
+              class="nl-fs-18 nl-color-gray-800 nl-lh-30 nl-font-body"
+              >{{ item.type }}
+            </a></span
+          >
+        </div> -->
+        <div
+          class="ns-service-info-contain mb-30 has_fade_anim"
+          v-if="item.floor"
+        >
+          <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black mb-10">
+            <i class="nl-icon nl-icon-circle-check"></i>
+
+            Floors
+          </h4>
+
+          <p
+            class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim"
+          >
+            {{ item.floor }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br /><br />
+    <div v-if="residential.residentialGallery">
+      <div class="nlv2_searvice-top-part pb-60">
+        <p
+          class="nl-fs-14 nl-font-body nl-lh-19 text-uppercase nl-color-brown nl-fw-500 nl-ls-1 pb-20 text-center"
+        >
+          Residential Gallery
+        </p>
+      </div>
+      <!-- Gallery Start-->
+      <div class="nlv2_gallery nl-section-pb nl-bg-color-gray-100">
+        <div class="nlv2_gallery_wrapper">
+          <div class="nlv2_gallery_container pl-90 pr-90">
+            <div class="nlv2_gallery_wrapper_container">
+              <div class="row g-30">
+                <div
+                  class="col-lg-4 col-md-6"
+                  v-for="(item, index) in residential.residentialGallery"
+                  :key="index"
+                >
+                  <div
+                    class="nlv2_gallery_big has_fade_anim image-hover"
+                    v-if="item.data"
+                  >
+                    <img :src="item.data" alt="" />
+                  </div>
                 </div>
-              </div>
-              <!-- <div class="col-lg-4 col-md-6">
+                <!-- <div class="col-lg-4 col-md-6">
               <div class="nlv2_gallery_small has_fade_anim">
                 <div class="nlv2_gallery_small-midoll image-hover">
                   <img src="/images/Gallery/gallery01.jpg" alt="" />
@@ -156,6 +234,7 @@
                 <img src="/images/Gallery/gallery02.jpg" alt="" />
               </div>
             </div> -->
+              </div>
             </div>
           </div>
         </div>
@@ -199,10 +278,14 @@
 
                     <h6
                       class="nl-fs-22 nl-font-heading nl-lh-26 nl-color-black pt-30 pb-20"
+                      v-if="item.name"
                     >
                       {{ item.name }}
                     </h6>
-                    <p class="nl-fs-18 nl-font-body nl-lh-26 nl-color-gray-800">
+                    <p
+                      class="nl-fs-18 nl-font-body nl-lh-26 nl-color-gray-800"
+                      v-if="item.description"
+                    >
                       {{ item.description }}
                     </p>
                   </div>

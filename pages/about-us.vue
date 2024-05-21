@@ -42,7 +42,10 @@
       <div class="row">
         <div class="col-lg-5 pe-lg-0">
           <div class="nl__about-banner-img">
-            <div class="nl__about-banner-img-sub image-hover has_fade_anim">
+            <div
+              class="nl__about-banner-img-sub image-hover has_fade_anim"
+              v-if="aboutUs.image"
+            >
               <img :src="aboutUs.image" alt="" />
             </div>
           </div>
@@ -58,12 +61,15 @@
               About Us
             </h5>
           </div>
-          <div class="nl__section-title mt-20 mb-20 has_fade_anim">
+          <div
+            class="nl__section-title mt-20 mb-20 has_fade_anim"
+            v-if="aboutUs.title"
+          >
             <h2 class="nl-fs-48 nl-lh-62 nl-color-black has_fade_anim">
               {{ aboutUs.title }}
             </h2>
           </div>
-          <div class="nl__section-description">
+          <div class="nl__section-description" v-if="aboutUs.description">
             <p
               v-if="aboutUs"
               class="nl-color-gray-800 has_fade_anim"
@@ -116,10 +122,10 @@
           </div>
           <div class="nl__section-button mt-45 nl__button-brown has_fade_anim">
             <a
-              href="#"
+              href="/contact"
               class="nl-color-black nl-fs-14 nl-fw-500 nl-lh-25 text-uppercase overflow-hidden d-inline-flex position-relative"
             >
-              <span class="position-relative z-1">Send Now</span>
+              <span class="position-relative z-1">Contact US</span>
               <span class="nl__btn-hover-style"></span>
             </a>
           </div>
@@ -138,6 +144,7 @@
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+            v-if="aboutUs.hand_of_experience"
           >
             <span class="odometer" data-count="250">{{
               aboutUs.hand_of_experience
@@ -149,6 +156,7 @@
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+            v-if="aboutUs.million_square_feet"
           >
             <span class="odometer" data-count="250">{{
               aboutUs.million_square_feet
@@ -160,6 +168,7 @@
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+            v-if="aboutUs.units"
           >
             <span class="odometer" data-count="250">{{ aboutUs.units }}</span>
             <span class="suffix">+</span>
@@ -172,6 +181,7 @@
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+            v-if="aboutUs.residential_property"
           >
             <span class="odometer" data-count="250">{{
               aboutUs.residential_property
@@ -185,6 +195,7 @@
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+            v-if="aboutUs.commercial_property"
           >
             <span class="odometer" data-count="250">{{
               aboutUs.commercial_property
@@ -196,6 +207,7 @@
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+            v-if="aboutUs.plots"
           >
             <span class="odometer" data-count="250">{{ aboutUs.plots }}</span>
             <span class="suffix">+</span>
@@ -537,7 +549,10 @@
           <div
             class="nl__property-item zoom-in-pora overflow-hidden has_fade_anim"
           >
-            <div class="nl__faq-banner-img has_fade_anim image-hover">
+            <div
+              class="nl__faq-banner-img has_fade_anim image-hover"
+              v-if="item.image"
+            >
               <img :src="item.image" alt="" />
               <!-- <div
                 class="nl__featured-badge nl-font-heading nl-fs-18 nl-lh-24 nl-color-black nl-border-radius-5 bg-white"
@@ -552,13 +567,14 @@
                 <div
                   class="nl__property-name-and--price d-flex align-items-center justify-content-between justify-content-between"
                 >
-                  <div class="nl__property-name">
+                  <div class="nl__property-name" v-if="item.name">
                     <h4 class="nl-color-black nl-fs-22 nl-lh-26">
                       {{ item.name }}
                     </h4>
                   </div>
                   <div
                     class="nl__property-price nl-font-heading nl-fs-18 nl-lh-24 nl-color-black nl-bg-color-gray-100 pt-10 pr-10 pb-10 pl-10"
+                    vif="item.role"
                   >
                     {{ item.role }}
                   </div>
