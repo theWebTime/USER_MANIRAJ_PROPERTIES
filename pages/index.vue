@@ -1589,30 +1589,29 @@ export default {
 <script setup>
 import { onMounted } from 'vue'
 
-onMounted(() => {
-  import("/js/jquery.js"); 
-import("/js/bootstrap.bundle.min.js"); 
-import("/js/lity.min.js"); 
-import("/js/gsap.min.js"); 
-import("/js/locomotive-scroll.min.js"); 
-import("/js/ScrollTrigger.min.js"); 
-import("/js/SplitText.min.js"); 
-import("/js/marquee.min.js"); 
-import("/js/swiper-bundle.min.js"); 
-import("/js/appear.js"); 
-import("/js/odometer.min.js"); 
-import("/js/count.js"); 
-import("/js/ScrollToPlugin.min.js"); 
-import('/js/script.js'); 
-
-  import('/js/jquery.js').then(module => {
-    console.log('jQuery loaded:', module)
-  }).catch(error => {
-    console.error('Error loading jQuery:', error)
-  })
-  // Access configuration defined in nuxt.config.js
-  console.log('baseURL:')
-
-  // Your JavaScript code here
-})
+// onMounted(() => {
+//   Promise.all([
+//     import("/js/jquery.js"),
+//     import("/js/bootstrap.bundle.min.js"),
+//     import("/js/lity.min.js"),
+//     import("/js/gsap.min.js"),
+//     import("/js/locomotive-scroll.min.js"),
+//     import("/js/ScrollTrigger.min.js"),
+//     import("/js/SplitText.min.js"),
+//     import("/js/marquee.min.js"),
+//     import("/js/swiper-bundle.min.js"),
+//     import("/js/appear.js"),
+//     import("/js/odometer.min.js"),
+//     import("/js/count.js"),
+//     import("/js/ScrollToPlugin.min.js"),
+//     import('/js/script.js'),
+//     import('/js/ThemeAnim.js')
+//   ]).then(() => {
+//     // All scripts have been loaded
+//     console.log('All scripts have been loaded');
+//   }).catch(error => {
+//     // Handle errors if any script fails to load
+//     console.error('Error loading scripts:', error);
+//   });
+// })
 </script>
