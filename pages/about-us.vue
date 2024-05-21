@@ -771,7 +771,7 @@
           <div class="row">
             <div class="col-12 col-lg-4 col-xl-4 col-xxl-5 col-md-12 col-sm-12">
               <div class="nlv2_newsleatter-left position-relative text-end">
-                <img src="/images/2.PNG" alt="" class="pt-50 has_fade_anim" />
+                <img src="/images/2.png" alt="" class="pt-50 has_fade_anim" />
               </div>
             </div>
             <div

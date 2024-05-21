@@ -966,13 +966,13 @@
   <!--================End Product Details Area =================-->
 </template>
 <script>
-import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+// import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 export default {
   components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
+    // Carousel,
+    // Slide,
+    // Pagination,
+    // Navigation,
   },
   data() {
     return {
