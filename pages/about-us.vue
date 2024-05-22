@@ -771,7 +771,7 @@
           <div class="row">
             <div class="col-12 col-lg-4 col-xl-4 col-xxl-5 col-md-12 col-sm-12">
               <div class="nlv2_newsleatter-left position-relative text-end">
-                <img src="/images/2.PNG" alt="" class="pt-50 has_fade_anim" />
+                <img src="/images/2.png" alt="" class="pt-50 has_fade_anim" />
               </div>
             </div>
             <div
@@ -881,6 +881,54 @@ export default {
       aboutUs: {},
       team: {},
     };
+  },
+  mounted() {
+    const scripts = [
+      "/js/jquery.js",
+      "/js/bootstrap.bundle.min.js",
+      "/js/lity.min.js",
+      "/js/gsap.min.js",
+      "/js/locomotive-scroll.min.js",
+      "/js/ScrollTrigger.min.js",
+      "/js/SplitText.min.js",
+      "/js/marquee.min.js",
+      "/js/swiper-bundle.min.js",
+      "/js/appear.js",
+      "/js/odometer.min.js",
+      "/js/count.js",
+      "/js/ScrollToPlugin.min.js",
+      "/js/script.js",
+      // Uncomment and include if needed
+      "/js/ThemeAnim.js",
+      // "https://some-website.com/stuff.js"
+    ];
+
+    function loadScriptSequentially(index) {
+      if (index >= scripts.length) {
+        return; // All scripts loaded
+      }
+
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = scripts[index];
+      script.defer = true;
+
+      script.onload = () => {
+        // Load the next script once the current script is successfully loaded
+        loadScriptSequentially(index + 1);
+      };
+
+      script.onerror = () => {
+        console.error(`Failed to load script: ${scripts[index]}`);
+        // Optionally, you can decide to continue loading the next script even if one fails
+        loadScriptSequentially(index + 1);
+      };
+
+      document.body.appendChild(script);
+    }
+
+    // Start loading the first script
+    loadScriptSequentially(0);
   },
   created() {
     this.fetchDataAboutUs();

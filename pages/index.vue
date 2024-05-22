@@ -1473,7 +1473,6 @@
 </template>
 <script>
 export default {
-  // layout: 'default',
   components: {},
   data() {
     return {
@@ -1482,7 +1481,54 @@ export default {
       aboutUs: {},
     };
   },
-  mounted() {},
+  mounted() {
+    const scripts = [
+      "/js/jquery.js",
+      "/js/bootstrap.bundle.min.js",
+      "/js/lity.min.js",
+      "/js/gsap.min.js",
+      "/js/locomotive-scroll.min.js",
+      "/js/ScrollTrigger.min.js",
+      "/js/SplitText.min.js",
+      "/js/marquee.min.js",
+      "/js/swiper-bundle.min.js",
+      "/js/appear.js",
+      "/js/odometer.min.js",
+      "/js/count.js",
+      "/js/ScrollToPlugin.min.js",
+      "/js/script.js",
+      // Uncomment and include if needed
+      "/js/ThemeAnim.js",
+      // "https://some-website.com/stuff.js"
+    ];
+
+    function loadScriptSequentially(index) {
+      if (index >= scripts.length) {
+        return; // All scripts loaded
+      }
+
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = scripts[index];
+      script.defer = true;
+
+      script.onload = () => {
+        // Load the next script once the current script is successfully loaded
+        loadScriptSequentially(index + 1);
+      };
+
+      script.onerror = () => {
+        console.error(`Failed to load script: ${scripts[index]}`);
+        // Optionally, you can decide to continue loading the next script even if one fails
+        loadScriptSequentially(index + 1);
+      };
+
+      document.body.appendChild(script);
+    }
+
+    // Start loading the first script
+    loadScriptSequentially(0);
+  },
   created() {
     this.fetchDataAboutUs();
     this.fetchDataSite();
@@ -1606,105 +1652,4 @@ export default {
     },
   },
 };
-//     title: "Home",
-//     script: [
-//         {
-//           defer: true,
-//           src: "/js/jquery-3.4.1.min.js",
-//           body: true,
-//         },
-//         {
-//           defer: true,
-//           src: "/js/popper.min.js",
-//           body: true,
-//         },
-//         {
-//           defer: true,
-//           src: "/js/bootstrap.min.js",
-//           body: true,
-//         },
-//         {
-//           defer: true,
-//           src: "/vendors/slick/slick.min.js",
-//           body: true,
-//         },
-//         {
-//           defer: true,
-//           src: "/vendors/datetimepicker/moment.js",
-//           body: true,
-//         },
-//         {
-//           defer: true,
-//           src: "/vendors/datetimepicker/tempusdominus-bootstrap-4.min.js",
-//           body: true,
-//         },
-//         {
-//           defer: true,
-//           src: "/vendors/nice-select/js/jquery.nice-select.min.js",
-//           body: true,
-//         },
-//         {
-//           defer: true,
-//           src: "/vendors/owl-carousel/owl.carousel.min.js",
-//           body: true,
-//         },
-//         {
-//           defer: true,
-//           src: "/vendors/isotope/imagesloaded.pkgd.min.js",
-//           body: true,
-//         },
-//         {
-//           defer: true,
-//           src: "/vendors/isotope/isotope.pkgd.min.js",
-//           body: true,
-//         },
-//         {
-//           defer: true,
-//           src: "/vendors/popup/jquery.magnific-popup.min.js",
-//           body: true,
-//         },
-//         {
-//           defer: true,
-//           src: "/vendors/animate-css/wow.min.js",
-//           body: true,
-//         },
-//         {
-//           defer: true,
-//           src: "/js/theme-dist.js",
-//           body: true,
-//         },
-//       ],
-// }),
-</script>
-<script setup>
-import { onMounted } from "vue";
-
-onMounted(() => {
-  import("/js/jquery.js");
-  import("/js/bootstrap.bundle.min.js");
-  import("/js/lity.min.js");
-  import("/js/gsap.min.js");
-  import("/js/locomotive-scroll.min.js");
-  import("/js/ScrollTrigger.min.js");
-  import("/js/SplitText.min.js");
-  import("/js/marquee.min.js");
-  import("/js/swiper-bundle.min.js");
-  import("/js/appear.js");
-  import("/js/odometer.min.js");
-  import("/js/count.js");
-  import("/js/ScrollToPlugin.min.js");
-  import("/js/script.js");
-
-  import("/js/jquery.js")
-    .then((module) => {
-      console.log("jQuery loaded:", module);
-    })
-    .catch((error) => {
-      console.error("Error loading jQuery:", error);
-    });
-  // Access configuration defined in nuxt.config.js
-  console.log("baseURL:");
-
-  // Your JavaScript code here
-});
 </script>
