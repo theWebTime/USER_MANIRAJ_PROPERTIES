@@ -4,10 +4,19 @@
     <div
       class="nl__main-header d-flex align-items-center justify-content-xl-start justify-content-between p-3 p-xl-0"
     >
-      <div class="nl__header-one-logo" v-if="site.logo">
+      <div class="nl__header-one-logo">
         <nuxt-link to="/">
           <img
+            v-if="site.logo"
             :src="site.logo"
+            alt=""
+            height="100"
+            width="100"
+            style="border-radius: 50px"
+          />
+          <img
+            v-else
+            src="/images/Maniraj-logo.jpg"
             alt=""
             height="100"
             width="100"
@@ -50,10 +59,10 @@
             target="_blank"
             ><i class="nl-icon nl-icon-instagram nl-color-black"></i
           ></a>
-          <!-- <a href="#"
-            ><i class="nl-icon nl-icon-x-twitter nl-color-black"></i
+          <a v-if="site.whatsapp_number" :href="whatsappLink"
+            ><i class="nl-icon nl-icon-chat-group nl-color-black nl-fs-20"></i
           ></a>
-          <a href="#"
+          <!--<a href="#"
             ><i class="nl-icon nl-icon-linkedin nl-color-black"></i
           ></a> -->
         </div>
@@ -143,6 +152,13 @@ export default {
   },
   created() {
     this.fetchDataSite();
+  },
+  computed: {
+    // Computed property to generate the WhatsApp link
+    whatsappLink() {
+      const baseUrl = "https://api.whatsapp.com/send";
+      return `${baseUrl}?phone=${this.site.whatsapp_number}`;
+    },
   },
   methods: {
     event() {

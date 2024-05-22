@@ -807,7 +807,7 @@
                       />
                     </div> -->
                   </div>
-                  <div
+                  <!-- <div
                     class="col-12 col-lg-5 col-xl-5 col-xxl-5 col-md-6 col-sm-12 mt-3 mt-lg-0"
                   >
                     <div
@@ -820,6 +820,46 @@
                         <span class="position-relative z-1">Contact Us</span>
                         <span class="nl__btn-hover-style"></span>
                       </a>
+                    </div>
+                  </div> -->
+                  <div class="row gx-30 mt-30">
+                    <div class="col-md-12">
+                      <div
+                        class="nl__hero-customer-info pt-10 pr-100 pb-30 pl-100 nl-bg-color-brown nl-border-radius-5 has_fade_anim"
+                      >
+                        <p class="text-white">
+                          <img
+                            src="/images/Maniraj-logo.jpg"
+                            alt=""
+                            height="100"
+                            width="100"
+                            style="border-radius: 50px"
+                          />
+                        </p>
+                        <h5
+                          class="nl-color-black nl-fs-20 text-uppercase nl-font-heading has_char_anim"
+                        >
+                          Maniraj Properties
+                        </h5>
+                        <div
+                          class="nl__hero-button-wrap mt-30 d-flex align-items-center justify-content-between"
+                        >
+                          <p
+                            class="text-white nl-fs-14 nl-fw-300 nl-lh-25 text-uppercase"
+                          >
+                            Inquiry Now
+                          </p>
+                          <a
+                            href="/contact"
+                            class="nl__header-btn d-flex align-items-center"
+                          >
+                            <!-- <span>CONTACT US</span>&nbsp;&nbsp;&nbsp; -->
+                            <i
+                              class="nl-icon nl-icon-arrow-right text-white"
+                            ></i>
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

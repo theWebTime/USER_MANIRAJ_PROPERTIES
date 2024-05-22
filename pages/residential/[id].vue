@@ -271,9 +271,13 @@
                     class="nlv2_searvice-box-main nl-searvice-boxv2 text-center nl-bg-color-gray-100 pt-40 pb-60 pl-40 pr-40 nl-button-hover has_fade_anim"
                   >
                     <div class="nl-button overflow-hidden">
-                      <i
-                        class="nl-icon nl-icon-home-2 nl-fs-65 nl-color-brown"
-                      ></i>
+                      <img
+                        src="/images/Maniraj-icon.png"
+                        alt=""
+                        height="150"
+                        width="150"
+                        style="border-radius: 50px"
+                      />
                     </div>
 
                     <h6

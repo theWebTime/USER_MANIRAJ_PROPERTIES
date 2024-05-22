@@ -7,7 +7,7 @@
           <div class="nlv2_footer_top pt-95 pb-100">
             <div class="row">
               <div
-                class="col-12 col-lg-12 col-xl-3 col-xxl-3 col-md-6 col-sm-12 nl-mtp"
+                class="col-12 col-lg-12 col-xl-4 col-xxl-4 col-md-6 col-sm-12 nl-mtp"
               >
                 <div class="nlv2_footer_top_link nl-mobile-mt">
                   <h4
@@ -61,14 +61,16 @@
                             class="nl-icon nl-icon-facebook nl-fs-16"
                           ></i></span
                       ></a>
-                      <!-- <a
-                        href="#"
+                      <a
+                        v-if="site.whatsapp_number"
+                        :href="whatsappLink"
+                        target="_blank"
                         class="nl-color-white-opacity nl-button-hover overflow-hidden"
                         ><span class="nl-button"
                           ><i
-                            class="nl-icon nl-icon-twitter nl-fs-16"
+                            class="nl-icon nl-icon-chat-group nl-fs-18"
                           ></i></span
-                      ></a> -->
+                      ></a>
                       <a
                         v-if="site.instagram_link"
                         :href="site.instagram_link"
@@ -92,7 +94,7 @@
                 </div>
               </div>
               <div
-                class="col-12 col-lg-12 col-xl-3 col-xxl-3 col-md-6 col-sm-12 nl-mtp"
+                class="col-12 col-lg-12 col-xl-4 col-xxl-4 col-md-6 col-sm-12 nl-mtp"
               >
                 <div class="nl_footer_top_link nl-mobile-mt">
                   <h4
@@ -126,7 +128,7 @@
                 </div>
               </div>
               <div
-                class="col-12 col-lg-12 col-xl-2 col-xxl-2 col-md-6 col-sm-12 nl-mtp"
+                class="col-12 col-lg-12 col-xl-4 col-xxl-4 col-md-6 col-sm-12 nl-mtp"
               >
                 <div class="nl_footer_top_link nl-mobile-mt">
                   <h4
@@ -316,6 +318,13 @@ export default {
   mounted() {},
   created() {
     this.fetchDataSite();
+  },
+  computed: {
+    // Computed property to generate the WhatsApp link
+    whatsappLink() {
+      const baseUrl = "https://api.whatsapp.com/send";
+      return `${baseUrl}?phone=${this.site.whatsapp_number}`;
+    },
   },
   methods: {
     resetValues() {

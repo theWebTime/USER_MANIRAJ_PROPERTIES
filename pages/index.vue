@@ -21,26 +21,25 @@
                     ></path>
                   </defs>
                   <text>
-                    <textPath xlink:href="#circle">
-                      1997 Best SW orking Since
-                    </textPath>
+                    <textPath xlink:href="#circle">Maniraj Properties</textPath>
                   </text>
                 </svg>
               </div>
 
-              <a
-                href="https://www.youtube.com/watch?v=6YKie_OZ6Cg&t=3s"
-                data-lity
-              >
-                <div class="canvas-icon">
-                  <i aria-hidden="true" class="nl-icon nl-icon-play"></i>
-                </div>
-              </a>
+              <div class="canvas-icon">
+                <img
+                  src="/images/Maniraj-logo.jpg"
+                  alt=""
+                  height="200"
+                  width="200"
+                  style="border-radius: 50px"
+                />
+              </div>
             </div>
           </div>
         </div>
         <div class="nl__hero-heading">
-          <h1
+          <h4
             class="nl-color-black nl-fs-62 nl-lh-86 text-uppercase nl-font-heading has_char_anim"
           >
             <span>Maniraj Properties:</span>
@@ -49,10 +48,10 @@
                 src="/images/title-image1.png"
                 alt=""
                 class="img_anim_reveal"
-              />
-            </span>
+              /> </span
+            >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span>Building Your Dreams into Reality</span>
-          </h1>
+          </h4>
         </div>
       </div>
       <div class="nl__hero-content-wrap mt-100">
@@ -440,6 +439,29 @@
               <span class="nl__btn-hover-style"></span>
             </a>
           </div>
+          <!-- <div class="row gx-30 mt-30">
+            <div class="col-md-12">
+              <div
+                class="nl__hero-customer-info pt-30 pr-30 pb-30 pl-30 nl-bg-color-brown nl-border-radius-5 has_fade_anim"
+              >
+                <div
+                  class="nl__hero-button-wrap mt-30 d-flex align-items-center justify-content-between"
+                >
+                  <p
+                    class="text-black nl-fs-14 nl-fw-300 nl-lh-25 text-uppercase"
+                  >
+                    Inquiry Now
+                  </p>
+                  <a
+                    href="/contact"
+                    class="nl__header-btn position-relative d-flex align-items-center"
+                  >
+                    <i class="nl-icon nl-icon-arrow-right text-black"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -450,6 +472,7 @@
   <div
     class="nl__video-banner-section position-relative"
     data-background="/images/video-bg.png"
+    v-if="site.youtube_link"
   >
     <div class="container d-flex align-items-center justify-content-center">
       <div class="wrapper_videos">
@@ -471,14 +494,27 @@
     <div class="marquees_wrapper has_fade_anim">
       <h2 class="nl-color-black nl-fs-59 nl-fw-500 nl-lh-67 nl-font-body mr-80">
         <span class="item mr-40">
-          <i class="nl-icon nl-icon-house-location-2 nl-color-brown mr-20"></i>
-          Metro Homes
-          <span class="nl__marqueue-text-stroke">Home Bliss Realty</span>
+          <!-- <i class="nl-icon nl-icon-house-location-2 nl-color-brown mr-20"></i> -->
+          <img
+            src="/images/Maniraj-icon.png"
+            alt=""
+            height="200"
+            width="150"
+            class="mr-20"
+          />
+          Maniraj Properties
+          <span class="nl__marqueue-text-stroke">#CityViewHeights</span>
         </span>
         <span class="item">
-          <i class="nl-icon nl-icon-house-location-2 nl-color-brown mr-20"></i>
-          Metro Homes
-          <span class="nl__marqueue-text-stroke">Home Bliss Realty</span>
+          <img
+            src="/images/Maniraj-icon.png"
+            alt=""
+            height="200"
+            width="200"
+            class="mr-20"
+          />
+          #SkylineLiving
+          <!-- <span class="nl__marqueue-text-stroke">Home Bliss Realty</span> -->
         </span>
       </h2>
     </div>
@@ -751,20 +787,42 @@
             </div>
           </div>
           <div class="col-lg-6 offset-lg-1 col-md-12 d-flex align-items-center">
-            <div>
-              <div class="nl__newsletter-form">
-                <!-- <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter Your Email"
-                  class="nl__newsletter-mail"
-                /> -->
-                <nuxt-link to="/contact">
-                  <input
-                    type="button"
-                    value="Contact Us"
-                    class="nl__newsletter-submit"
-                /></nuxt-link>
+            <div class="row gx-30 mt-30">
+              <div class="col-md-12">
+                <div
+                  class="nl__hero-customer-info pt-30 pr-100 pb-30 pl-100 nl-bg-color-brown nl-border-radius-5 has_fade_anim"
+                >
+                  <p class="text-white">
+                    <img
+                      src="/images/Maniraj-logo.jpg"
+                      alt=""
+                      height="100"
+                      width="100"
+                      style="border-radius: 50px"
+                    />
+                  </p>
+                  <h5
+                    class="nl-color-black nl-fs-20 text-uppercase nl-font-heading has_char_anim"
+                  >
+                    Maniraj Properties
+                  </h5>
+                  <div
+                    class="nl__hero-button-wrap mt-30 d-flex align-items-center justify-content-between"
+                  >
+                    <p
+                      class="text-white nl-fs-14 nl-fw-300 nl-lh-25 text-uppercase"
+                    >
+                      Inquiry Now
+                    </p>
+                    <a
+                      href="/contact"
+                      class="nl__header-btn d-flex align-items-center"
+                    >
+                      <!-- <span>CONTACT US</span>&nbsp;&nbsp;&nbsp; -->
+                      <i class="nl-icon nl-icon-arrow-right text-white"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -962,14 +1020,26 @@
                 <div
                   class="nl__features-additional-meta-item nl-color-gray-800 d-flex align-items-center justify-content-between has_fade_anim"
                 >
-                  <span>Hand Of Experience</span>
-                  <span>{{ aboutUs.hand_of_experience }}</span>
+                  <span>Fitness Center</span>
+                  <span>1</span>
                 </div>
                 <div
                   class="nl__features-additional-meta-item nl-color-gray-800 d-flex align-items-center justify-content-between has_fade_anim"
                 >
-                  <span>Million Square Feet</span>
-                  <span>{{ aboutUs.million_square_feet }}</span>
+                  <span>Club House</span>
+                  <span>1</span>
+                </div>
+                <div
+                  class="nl__features-additional-meta-item nl-color-gray-800 d-flex align-items-center justify-content-between has_fade_anim"
+                >
+                  <span>Fire Alarms</span>
+                  <span>1</span>
+                </div>
+                <div
+                  class="nl__features-additional-meta-item nl-color-gray-800 d-flex align-items-center justify-content-between has_fade_anim"
+                >
+                  <span>Parking Area</span>
+                  <span>1 OR 2</span>
                 </div>
               </div>
             </div>
