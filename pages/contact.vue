@@ -116,17 +116,19 @@
                     >
                       Email Address
                     </h4>
-                    <a
+                    
+                      <p
+                        class="nl-fs-18 nl-color-gray-800 nl-lh-30 nl-font-body"
+                      >
+                      <a
                       v-if="site.email1"
                       :href="'mailto:' + site.email1"
                       target="_blank"
                     >
-                      <p
-                        class="nl-fs-18 nl-color-gray-800 nl-lh-30 nl-font-body"
-                      >
                         {{ site.email1 }}
-                      </p></a
+                        </a
                     >
+                      </p>
                   </div>
                 </div>
               </div>
@@ -302,6 +304,44 @@
   </section>
   <!-- Contact Section End -->
 </template>
+<script setup>
+import { onMounted, onBeforeUnmount } from 'vue';
+import { loadScript, unloadScript } from '~/utils/scriptManager';
+
+const scripts = [
+  "/js/jquery.js",
+  "/js/bootstrap.bundle.min.js",
+  "/js/lity.min.js",
+  "/js/gsap.min.js",
+  "/js/locomotive-scroll.min.js",
+  "/js/ScrollTrigger.min.js",
+  "/js/SplitText.min.js",
+  "/js/marquee.min.js",
+  "/js/swiper-bundle.min.js",
+  "/js/appear.js",
+  "/js/odometer.min.js",
+  // "/js/count.js",
+  "/js/ScrollToPlugin.min.js",
+  "/js/script.js",
+  // "/js/ThemeAnim.js"
+];
+
+onMounted(async () => {
+  for (const script of scripts) {
+    try {
+      await loadScript(script);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+});
+
+onBeforeUnmount(() => {
+  for (const script of scripts) {
+    unloadScript(script);
+  }
+});
+</script>
 <script>
 export default {
   components: {},

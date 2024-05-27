@@ -81,6 +81,14 @@
                             class="nl-icon nl-icon-instagram nl-fs-16"
                           ></i></span
                       ></a>
+                      <a
+                        v-if="site.youtube_link"
+                        :href="site.youtube_link"
+                        target="_blank"
+                        class="nl-color-white-opacity nl-button-hover overflow-hidden"
+                        ><span class="nl-button"
+                          ><i class="nl-icon nl-icon-play nl-fs-16"></i></span
+                      ></a>
                       <!-- <a
                         href="#"
                         class="nl-color-white-opacity nl-button-hover overflow-hidden"

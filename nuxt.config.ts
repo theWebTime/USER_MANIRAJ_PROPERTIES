@@ -9,14 +9,14 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Maniraj",
-      meta: [{ name: "description", content: "Selling E-bikes." }],
+      title: "Maniraj Properties",
+      meta: [{ name: "description", content: "Selling Properties." }],
       link: [
-        // {
-        //   rel : "icon",
-        //   href: "/img/favicon-new.png",
-        //   type : "image/png"
-        // },
+         {
+           rel : "icon",
+           href: "/images/Maniraj-i.png",
+           type : "image/png"
+         },
         {
           rel: "stylesheet",
           href: "/css/bootstrap.min.css",
@@ -35,11 +35,11 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
-          href: "/css/odometer-theme-default.css",
+          href: "/css/swiper-bundle.min.css",
         },
         {
           rel: "stylesheet",
-          href: "/css/responsive.css",
+          href: "/css/odometer-theme-default.css",
         },
         {
           rel: "stylesheet",
@@ -47,8 +47,10 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
-          href: "/css/swiper-bundle.min.css",
+          href: "/css/responsive.css",
         },
+        
+        
       ],
       // script: [
       //   {

@@ -38,7 +38,7 @@
     class="nl__property-details-section nl-bg-color-gray-100 nl-section-pb"
   >
     <br /><br />
-    <div class="container container-1290">
+    <div class="container container-1290" v-if="team.length > 0">
       <div class="row">
         <div class="col-md-12 text-center">
           <div class="nl__section-subtitle">
@@ -274,9 +274,50 @@
         </div> -->
       </div>
     </div>
+    <div class="row g-30" v-else>
+      <img src="/images/no_data_found.png" style="height: 900px" alt="" />
+    </div>
   </section>
   <!-- Property Details End-->
 </template>
+<script setup>
+import { onMounted, onBeforeUnmount } from 'vue';
+import { loadScript, unloadScript } from '~/utils/scriptManager';
+
+const scripts = [
+  "/js/jquery.js",
+  "/js/bootstrap.bundle.min.js",
+  "/js/lity.min.js",
+  "/js/gsap.min.js",
+  "/js/locomotive-scroll.min.js",
+  "/js/ScrollTrigger.min.js",
+  "/js/SplitText.min.js",
+  "/js/marquee.min.js",
+  "/js/swiper-bundle.min.js",
+  "/js/appear.js",
+  "/js/odometer.min.js",
+  // "/js/count.js",
+  "/js/ScrollToPlugin.min.js",
+  "/js/script.js",
+  // "/js/ThemeAnim.js"
+];
+
+onMounted(async () => {
+  for (const script of scripts) {
+    try {
+      await loadScript(script);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+});
+
+onBeforeUnmount(() => {
+  for (const script of scripts) {
+    unloadScript(script);
+  }
+});
+</script>
 <script>
 export default {
   data() {

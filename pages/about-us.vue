@@ -141,6 +141,94 @@
   >
     <div class="container container-1290">
       <div class="nl__counter-wrap d-flex flex-wrap">
+        <div class="nl__counter-item" v-if="aboutUs.hand_of_experience">
+          <div
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+          >
+            <span class="odometer" :data-count="aboutUs.hand_of_experience">{{
+              aboutUs.hand_of_experience
+            }}</span>
+            <span class="suffix">+</span>
+          </div>
+          <p class="nl__counter-title nl-color-gray-800">Hand Of Experience</p>
+        </div>
+        <div class="nl__counter-item" v-if="aboutUs.million_square_feet">
+          <div
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+          >
+            <span class="odometer" :data-count="aboutUs.million_square_feet">{{
+              aboutUs.million_square_feet
+            }}</span>
+            <span class="suffix">+</span>
+          </div>
+          <p class="nl__counter-title nl-color-gray-800">Million Square Feet</p>
+        </div>
+        <div class="nl__counter-item" v-if="aboutUs.units">
+          <div
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+          >
+            <span class="odometer" :data-count="aboutUs.units">{{
+              aboutUs.units
+            }}</span>
+            <span class="suffix">+</span>
+          </div>
+          <p class="nl__counter-title nl-color-gray-800">Units</p>
+        </div>
+        <div class="nl__counter-item" v-if="aboutUs.residential_property">
+          <div
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+          >
+            <span class="odometer" :data-count="aboutUs.residential_property">{{
+              aboutUs.residential_property
+            }}</span>
+            <span class="suffix">+</span>
+          </div>
+          <p class="nl__counter-title nl-color-gray-800">
+            Residential Property
+          </p>
+        </div>
+        <div class="nl__counter-item" v-if="aboutUs.commercial_property">
+          <div
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+          >
+            <span class="odometer" :data-count="aboutUs.commercial_property">{{
+              aboutUs.commercial_property
+            }}</span>
+            <span class="suffix">+</span>
+          </div>
+          <p class="nl__counter-title nl-color-gray-800">Commercial Property</p>
+        </div>
+        <div class="nl__counter-item" v-if="aboutUs.plots">
+          <div
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+          >
+            <span class="odometer" :data-count="aboutUs.plots">{{
+              aboutUs.plots
+            }}</span>
+            <span class="suffix">+</span>
+          </div>
+          <p class="nl__counter-title nl-color-gray-800">Plots</p>
+        </div>
+        <!-- <div class="nl__counter-item">
+          <div
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+          >
+            <span class="odometer" :data-count="1000">1000</span>
+            <span class="suffix">+</span>
+          </div>
+          <p class="nl__counter-title nl-color-gray-800">Total Customers</p>
+        </div>
+        <div class="nl__counter-item">
+          <div
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+          >
+            <span class="odometer" :data-count="1780">1780</span>
+            <span class="suffix">+</span>
+          </div>
+          <p class="nl__counter-title nl-color-gray-800">Close Deals</p>
+        </div> -->
+      </div>
+      <!--  <div class="nl__counter-wrap d-flex flex-wrap">
         <div class="nl__counter-item">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
@@ -214,7 +302,7 @@
           </div>
           <p class="nl__counter-title nl-color-gray-800">Plots</p>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- Countdown End-->
@@ -521,7 +609,7 @@
   <section
     class="nl__property-details-section nl-bg-color-gray-100 nl-section-pb"
   >
-    <div class="container container-1290">
+    <div class="container container-1290" v-if="team.length > 0">
       <div class="row">
         <div class="col-md-12 text-center">
           <div class="nl__section-subtitle">
@@ -771,7 +859,12 @@
           <div class="row">
             <div class="col-12 col-lg-4 col-xl-4 col-xxl-5 col-md-12 col-sm-12">
               <div class="nlv2_newsleatter-left position-relative text-end">
-                <img src="/images/2.png" alt="" class="pt-50 has_fade_anim" />
+                <img
+                  src="/images/au2.PNG"
+                  style="height: 364px; width: 265px"
+                  alt=""
+                  class="pt-50 has_fade_anim"
+                />
               </div>
             </div>
             <div
@@ -822,7 +915,7 @@
                       </a>
                     </div>
                   </div> -->
-                  <div class="row gx-30 mt-30">
+                  <!-- <div class="row gx-30 mt-30">
                     <div class="col-md-12">
                       <div
                         class="nl__hero-customer-info pt-10 pr-100 pb-30 pl-100 nl-bg-color-brown nl-border-radius-5 has_fade_anim"
@@ -853,7 +946,51 @@
                             href="/contact"
                             class="nl__header-btn d-flex align-items-center"
                           >
-                            <!-- <span>CONTACT US</span>&nbsp;&nbsp;&nbsp; -->
+                             <span>CONTACT US</span>&nbsp;&nbsp;&nbsp; 
+                            <i
+                              class="nl-icon nl-icon-arrow-right text-white"
+                            ></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="row gx-30 mt-30">
+                    <div class="col-md-12">
+                      <div
+                        class="nl__hero-customer-info pt-30 pr-30 pb-30 pl-30 nl-bg-color-brown nl-border-radius-5 has_fade_anim"
+                      >
+                        <img
+                          src="/images/Maniraj-logo.jpg"
+                          alt=""
+                          height="100"
+                          width="100"
+                          style="border-radius: 50px"
+                        />
+
+                        <h5
+                          class="nl-color-black nl-fs-20 text-uppercase nl-font-heading has_char_anim"
+                        >
+                          Maniraj Properties
+                        </h5>
+                        <p class="text-white">
+                          At Maniraj Properties, we build more than just
+                          homes—we build dreams. Our commitment to quality and
+                          excellence ensures that every project stands the test
+                          of time.
+                        </p>
+                        <div
+                          class="nl__hero-button-wrap mt-30 d-flex align-items-center justify-content-between"
+                        >
+                          <p
+                            class="text-white nl-fs-14 nl-fw-300 nl-lh-25 text-uppercase"
+                          >
+                            Inquiry Now
+                          </p>
+                          <a
+                            href="/contact"
+                            class="nl__header-btn position-relative d-flex align-items-center"
+                          >
                             <i
                               class="nl-icon nl-icon-arrow-right text-white"
                             ></i>
@@ -873,7 +1010,160 @@
       </div>
     </div>
   </div>
+  <div class="nlv2_newsleatter nl-bg-color-gray-100 nl-section-pb">
+    <!-- Features Start-->
+    <section class="nl__features-section nl-bg-color-gray-100">
+      <div class="container container-1290">
+        <div
+          class="nl__feature-content pt-120 pr-80 pb-120 pl-80 bg-white has_fade_anim"
+        >
+          <div class="row g-30">
+            <div class="col-lg-6">
+              <div class="nl__feature-item-wrap pr-30">
+                <div class="nl__section-title mb-35">
+                  <h2
+                    class="nl-fs-48 nl-lh-62 nl-color-black has_fade_anim has_fade_anim"
+                  >
+                    Features
+                  </h2>
+                </div>
+                <div
+                  class="nl__features-meta d-flex flex-wrap nl-gap-20 has_fade_anim"
+                >
+                  <div class="nl-feature-meta-item">
+                    <p class="nl-color-gray-800">Property Type</p>
+                    <div
+                      class="nl__feature-details mt-15 d-flex align-items-center"
+                    >
+                      <i
+                        class="nl-icon nl-icon-home nl-color-brown nl-fs-36 mr-15"
+                      ></i>
+                      <h5 class="nl-color-black nl-fs-18 nl-lh-19">
+                        Residential
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="nl-feature-meta-item">
+                    <p class="nl-color-gray-800">Bedroom</p>
+                    <div
+                      class="nl__feature-details mt-15 d-flex align-items-center"
+                    >
+                      <i
+                        class="nl-icon nl-icon-bed nl-color-brown nl-fs-36 mr-15"
+                      ></i>
+                      <h5 class="nl-color-black nl-fs-18 nl-lh-19">
+                        x2, x3, x4
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="nl-feature-meta-item">
+                    <p class="nl-color-gray-800">Bathroom</p>
+                    <div
+                      class="nl__feature-details mt-15 d-flex align-items-center"
+                    >
+                      <i
+                        class="nl-icon nl-icon-bathtub nl-color-brown nl-fs-36 mr-15"
+                      ></i>
+                      <h5 class="nl-color-black nl-fs-18 nl-lh-19">
+                        x2, x3, x4
+                      </h5>
+                    </div>
+                  </div>
+                  <div class="nl-feature-meta-item">
+                    <p class="nl-color-gray-800">Size</p>
+                    <div
+                      class="nl__feature-details mt-15 d-flex align-items-center"
+                    >
+                      <i
+                        class="nl-icon nl-icon-sqft nl-color-brown nl-fs-36 mr-15"
+                      ></i>
+                      <h5 class="nl-color-black nl-fs-18 nl-lh-19">
+                        150 to 500 sq.yard
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="nl__features-additional-meta mt-70 d-flex nl-gap-20 flex-column"
+                >
+                  <div
+                    class="nl__features-additional-meta-item nl-color-gray-800 d-flex align-items-center justify-content-between has_fade_anim"
+                  >
+                    <span>Fitness Center</span>
+                    <span>1</span>
+                  </div>
+                  <div
+                    class="nl__features-additional-meta-item nl-color-gray-800 d-flex align-items-center justify-content-between has_fade_anim"
+                  >
+                    <span>Club House</span>
+                    <span>1</span>
+                  </div>
+                  <div
+                    class="nl__features-additional-meta-item nl-color-gray-800 d-flex align-items-center justify-content-between has_fade_anim"
+                  >
+                    <span>Fire Alarms</span>
+                    <span>1</span>
+                  </div>
+                  <div
+                    class="nl__features-additional-meta-item nl-color-gray-800 d-flex align-items-center justify-content-between has_fade_anim"
+                  >
+                    <span>Parking Area</span>
+                    <span>1 OR 2</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="nl__feature-img has_image_zoom image-hover">
+                <img src="/images/4.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- Features End-->
 </template>
+<script setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import { loadScript, unloadScript } from "~/utils/scriptManager";
+
+const scripts = [
+  "/js/jquery.js",
+  "/js/bootstrap.bundle.min.js",
+  "/js/lity.min.js",
+  "/js/gsap.min.js",
+  "/js/locomotive-scroll.min.js",
+  "/js/ScrollTrigger.min.js",
+  "/js/SplitText.min.js",
+  "/js/marquee.min.js",
+  "/js/swiper-bundle.min.js",
+  "/js/appear.js",
+  "/js/odometer.min.js",
+  // "/js/count.js",
+  "/js/ScrollToPlugin.min.js",
+  "/js/script.js",
+  // "/js/ThemeAnim.js"
+];
+
+onMounted(async () => {
+  for (const script of scripts) {
+    try {
+      await loadScript(script);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+});
+
+onBeforeUnmount(() => {
+  for (const script of scripts) {
+    unloadScript(script);
+  }
+});
+</script>
+
 <script>
 export default {
   data() {
@@ -881,54 +1171,6 @@ export default {
       aboutUs: {},
       team: {},
     };
-  },
-  mounted() {
-    const scripts = [
-      "/js/jquery.js",
-      "/js/bootstrap.bundle.min.js",
-      "/js/lity.min.js",
-      "/js/gsap.min.js",
-      "/js/locomotive-scroll.min.js",
-      "/js/ScrollTrigger.min.js",
-      "/js/SplitText.min.js",
-      "/js/marquee.min.js",
-      "/js/swiper-bundle.min.js",
-      "/js/appear.js",
-      "/js/odometer.min.js",
-      "/js/count.js",
-      "/js/ScrollToPlugin.min.js",
-      "/js/script.js",
-      // Uncomment and include if needed
-      "/js/ThemeAnim.js",
-      // "https://some-website.com/stuff.js"
-    ];
-
-    function loadScriptSequentially(index) {
-      if (index >= scripts.length) {
-        return; // All scripts loaded
-      }
-
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src = scripts[index];
-      script.defer = true;
-
-      script.onload = () => {
-        // Load the next script once the current script is successfully loaded
-        loadScriptSequentially(index + 1);
-      };
-
-      script.onerror = () => {
-        console.error(`Failed to load script: ${scripts[index]}`);
-        // Optionally, you can decide to continue loading the next script even if one fails
-        loadScriptSequentially(index + 1);
-      };
-
-      document.body.appendChild(script);
-    }
-
-    // Start loading the first script
-    loadScriptSequentially(0);
   },
   created() {
     this.fetchDataAboutUs();

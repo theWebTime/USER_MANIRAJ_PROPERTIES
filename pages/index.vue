@@ -27,13 +27,7 @@
               </div>
 
               <div class="canvas-icon">
-                <img
-                  src="/images/Maniraj-logo.jpg"
-                  alt=""
-                  height="200"
-                  width="200"
-                  style="border-radius: 50px"
-                />
+                <img src="/images/Mi.jpg" alt="" style="border-radius: 50px" />
               </div>
             </div>
           </div>
@@ -72,7 +66,7 @@
                   <div
                     class="nl__header-counter-number nl-color-brown nl-fs-32 nl-lh-44 nl-font-heading d-flex align-items-center"
                   >
-                    <span class="odometer" data-count="36">2</span>K+
+                    <span class="odometer" data-count="2">1</span>K+
                   </div>
                   <h5
                     class="nl__happy-customer nl-fs-16 nl-font-body nl-fw-500 nl-lh-22 nl-color-black anim-reveal-line has_char_anim"
@@ -183,7 +177,7 @@
                 <div
                   class="nl__service-number-box d-flex align-items-center justify-content-between nl-border-radius-5 nl-button overflow-hidden"
                 >
-                  <h4>01</h4>
+                  <h4><nuxt-link to="/residential">01</nuxt-link></h4>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="65"
@@ -203,7 +197,8 @@
                   <nuxt-link to="/residential">Residential</nuxt-link>
                 </h3>
                 <p class="nl__service-info text-white has_fade_anim">
-                  Find your dream home with us. Browse our curated selection of
+                  Tap on Residential to view More Residential Properties. Find
+                  your dream home with us. Browse our curated selection of
                   residential properties today.
                 </p>
               </div>
@@ -213,7 +208,7 @@
                 <div
                   class="nl__service-number-box d-flex align-items-center justify-content-between nl-border-radius-5 nl-button overflow-hidden"
                 >
-                  <h4>02</h4>
+                  <h4><nuxtLink to="/plot">02</nuxtLink></h4>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="65"
@@ -233,8 +228,9 @@
                   <nuxtLink to="/plot">Plot</nuxtLink>
                 </h3>
                 <p class="nl__service-info text-white has_fade_anim">
-                  Explore potential and possibility with our Plot Collection.
-                  Find the perfect land to shape your dreams.
+                  Tap on Plot to view More Plot Properties. Explore potential
+                  and possibility with our Plot Collection. Find the perfect
+                  land to shape your dreams.
                 </p>
               </div>
             </div>
@@ -243,7 +239,7 @@
                 <div
                   class="nl__service-number-box d-flex align-items-center justify-content-between nl-border-radius-5 nl-button overflow-hidden"
                 >
-                  <h4>03</h4>
+                  <h4><nuxtLink to="/commercial">03</nuxtLink></h4>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="65"
@@ -263,8 +259,9 @@
                   <nuxtLink to="/commercial">Commercial</nuxtLink>
                 </h3>
                 <p class="nl__service-info text-white has_fade_anim">
-                  Elevate your business with our Commercial Collection. Find the
-                  perfect space to thrive in.
+                  Tap on Commercial to view More Commercial Properties. Elevate
+                  your business with our Commercial Collection. Find the perfect
+                  space to thrive in.
                 </p>
               </div>
             </div>
@@ -469,7 +466,7 @@
   <!-- About Us End -->
 
   <!-- Video Banner Start -->
-  <div
+  <!--  <div
     class="nl__video-banner-section position-relative"
     data-background="/images/video-bg.png"
     v-if="site.youtube_link"
@@ -486,7 +483,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- Video Banner End -->
 
   <!-- Marque section Start-->
@@ -557,11 +554,11 @@
               <nuxt-link :to="'/residential/' + item.id">
                 <img v-if="item.image" :src="item.image" alt="" />
               </nuxt-link>
-              <div
+              <!-- <div
                 class="nl__featured-badge nl-font-heading nl-fs-18 nl-lh-24 nl-color-black nl-border-radius-5 bg-white"
               >
                 Featured
-              </div>
+              </div> -->
             </div>
             <div class="nl__property-details-wrap has_fade_anim">
               <div
@@ -786,13 +783,13 @@
               </p>
             </div>
           </div>
-          <div class="col-lg-6 offset-lg-1 col-md-12 d-flex align-items-center">
-            <div class="row gx-30 mt-30">
-              <div class="col-md-12">
-                <div
-                  class="nl__hero-customer-info pt-30 pr-100 pb-30 pl-100 nl-bg-color-brown nl-border-radius-5 has_fade_anim"
-                >
-                  <p class="text-white">
+          <!-- <div class="col-lg-6 offset-lg-1 col-md-12 d-flex align-items-center">
+            <div class="col-lg-4">
+              <div class="row gx-30 mt-30">
+                <div class="col-md-12">
+                  <div
+                    class="nl__hero-customer-info pt-30 pr-100 pb-30 pl-100 nl-bg-color-brown nl-border-radius-5 has_fade_anim"
+                  >
                     <img
                       src="/images/Maniraj-logo.jpg"
                       alt=""
@@ -800,12 +797,61 @@
                       width="100"
                       style="border-radius: 50px"
                     />
-                  </p>
+
+                    <h5
+                      class="nl-color-black nl-fs-20 text-uppercase nl-font-heading has_char_anim"
+                    >
+                      Maniraj Properties:
+                    </h5>
+                    <p class="text-white">
+                      Transforming Dreams into Reality with Unmatched Quality
+                      and Precision. Experience Excellence in Every Corner of
+                      Your New Home.
+                    </p>
+                    <div
+                      class="nl__hero-button-wrap mt-30 d-flex align-items-center justify-content-between"
+                    >
+                      <p
+                        class="text-white nl-fs-14 nl-fw-300 nl-lh-25 text-uppercase"
+                      >
+                        Inquiry Now
+                      </p>
+                      <a
+                        href="/contact"
+                        class="nl__header-btn position-relative d-flex align-items-center"
+                      >
+                        <i class="nl-icon nl-icon-arrow-right text-white"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <div class="col-lg-4">
+            <div class="row gx-30 mt-30">
+              <div class="col-md-12">
+                <div
+                  class="nl__hero-customer-info pt-30 pr-30 pb-30 pl-30 nl-bg-color-brown nl-border-radius-5 has_fade_anim"
+                >
+                  <img
+                    src="/images/Maniraj-logo.jpg"
+                    alt=""
+                    height="100"
+                    width="100"
+                    style="border-radius: 50px"
+                  />
+
                   <h5
                     class="nl-color-black nl-fs-20 text-uppercase nl-font-heading has_char_anim"
                   >
-                    Maniraj Properties
+                    Maniraj Properties:
                   </h5>
+                  <p class="text-white">
+                    Transforming Dreams into Reality with Unmatched Quality and
+                    Precision. Experience Excellence in Every Corner of Your New
+                    Home.
+                  </p>
                   <div
                     class="nl__hero-button-wrap mt-30 d-flex align-items-center justify-content-between"
                   >
@@ -816,9 +862,8 @@
                     </p>
                     <a
                       href="/contact"
-                      class="nl__header-btn d-flex align-items-center"
+                      class="nl__header-btn position-relative d-flex align-items-center"
                     >
-                      <!-- <span>CONTACT US</span>&nbsp;&nbsp;&nbsp; -->
                       <i class="nl-icon nl-icon-arrow-right text-white"></i>
                     </a>
                   </div>
@@ -947,7 +992,7 @@
   <!-- FAQ End-->
 
   <!-- Features Start-->
-  <section class="nl__features-section nl-bg-color-gray-100">
+  <!--   <section class="nl__features-section nl-bg-color-gray-100">
     <div class="container container-1290">
       <div
         class="nl__feature-content pt-120 pr-80 pb-120 pl-80 bg-white has_fade_anim"
@@ -1052,7 +1097,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- Features End-->
 
   <!-- Countdown Start-->
@@ -1061,49 +1106,44 @@
   >
     <div class="container container-1290">
       <div class="nl__counter-wrap d-flex flex-wrap">
-        <div class="nl__counter-item">
+        <div class="nl__counter-item" v-if="aboutUs.hand_of_experience">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
-            v-if="aboutUs.hand_of_experience"
           >
-            <span class="odometer" data-count="250">{{
+            <span class="odometer" :data-count="aboutUs.hand_of_experience">{{
               aboutUs.hand_of_experience
             }}</span>
             <span class="suffix">+</span>
           </div>
           <p class="nl__counter-title nl-color-gray-800">Hand Of Experience</p>
         </div>
-        <div class="nl__counter-item">
+        <div class="nl__counter-item" v-if="aboutUs.million_square_feet">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
-            v-if="aboutUs.million_square_feet"
           >
-            <span class="odometer" data-count="250">{{
+            <span class="odometer" :data-count="aboutUs.million_square_feet">{{
               aboutUs.million_square_feet
             }}</span>
             <span class="suffix">+</span>
           </div>
           <p class="nl__counter-title nl-color-gray-800">Million Square Feet</p>
         </div>
-        <div class="nl__counter-item">
+        <div class="nl__counter-item" v-if="aboutUs.units">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
-            v-if="aboutUs.units"
           >
-            <span class="odometer" data-count="250">{{ aboutUs.units }}</span>
+            <span class="odometer" :data-count="aboutUs.units">{{
+              aboutUs.units
+            }}</span>
             <span class="suffix">+</span>
           </div>
           <p class="nl__counter-title nl-color-gray-800">Units</p>
         </div>
-      </div>
-      <br /><br />
-      <div class="nl__counter-wrap d-flex flex-wrap">
-        <div class="nl__counter-item">
+        <div class="nl__counter-item" v-if="aboutUs.residential_property">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
-            v-if="aboutUs.residential_property"
           >
-            <span class="odometer" data-count="250">{{
+            <span class="odometer" :data-count="aboutUs.residential_property">{{
               aboutUs.residential_property
             }}</span>
             <span class="suffix">+</span>
@@ -1112,28 +1152,46 @@
             Residential Property
           </p>
         </div>
-        <div class="nl__counter-item">
+        <div class="nl__counter-item" v-if="aboutUs.commercial_property">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
-            v-if="aboutUs.commercial_property"
           >
-            <span class="odometer" data-count="250">{{
+            <span class="odometer" :data-count="aboutUs.commercial_property">{{
               aboutUs.commercial_property
             }}</span>
             <span class="suffix">+</span>
           </div>
           <p class="nl__counter-title nl-color-gray-800">Commercial Property</p>
         </div>
-        <div class="nl__counter-item">
+        <div class="nl__counter-item" v-if="aboutUs.plots">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
-            v-if="aboutUs.plots"
           >
-            <span class="odometer" data-count="250">{{ aboutUs.plots }}</span>
+            <span class="odometer" :data-count="aboutUs.plots">{{
+              aboutUs.plots
+            }}</span>
             <span class="suffix">+</span>
           </div>
           <p class="nl__counter-title nl-color-gray-800">Plots</p>
         </div>
+        <!-- <div class="nl__counter-item">
+          <div
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+          >
+            <span class="odometer" :data-count="1000">1000</span>
+            <span class="suffix">+</span>
+          </div>
+          <p class="nl__counter-title nl-color-gray-800">Total Customers</p>
+        </div>
+        <div class="nl__counter-item">
+          <div
+            class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
+          >
+            <span class="odometer" :data-count="1780">1780</span>
+            <span class="suffix">+</span>
+          </div>
+          <p class="nl__counter-title nl-color-gray-800">Close Deals</p>
+        </div> -->
       </div>
     </div>
   </div>
@@ -1471,6 +1529,45 @@
   </div> -->
   <!-- Testimonial End -->
 </template>
+<script setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import { loadScript, unloadScript } from "~/utils/scriptManager";
+
+const scripts = [
+  "/js/jquery.js",
+  "/js/bootstrap.bundle.min.js",
+  "/js/lity.min.js",
+  "/js/gsap.min.js",
+  "/js/locomotive-scroll.min.js",
+  "/js/ScrollTrigger.min.js",
+  "/js/SplitText.min.js",
+  "/js/marquee.min.js",
+  "/js/swiper-bundle.min.js",
+  "/js/appear.js",
+  "/js/odometer.min.js",
+  // "/js/count.js",
+  "/js/ScrollToPlugin.min.js",
+  "/js/script.js",
+  // "/js/ThemeAnim.js"
+];
+
+onMounted(async () => {
+  for (const script of scripts) {
+    try {
+      await loadScript(script);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+});
+
+onBeforeUnmount(() => {
+  for (const script of scripts) {
+    unloadScript(script);
+  }
+});
+</script>
+
 <script>
 export default {
   components: {},
@@ -1480,54 +1577,6 @@ export default {
       site: {},
       aboutUs: {},
     };
-  },
-  mounted() {
-    const scripts = [
-      "/js/jquery.js",
-      "/js/bootstrap.bundle.min.js",
-      "/js/lity.min.js",
-      "/js/gsap.min.js",
-      "/js/locomotive-scroll.min.js",
-      "/js/ScrollTrigger.min.js",
-      "/js/SplitText.min.js",
-      "/js/marquee.min.js",
-      "/js/swiper-bundle.min.js",
-      "/js/appear.js",
-      "/js/odometer.min.js",
-      "/js/count.js",
-      "/js/ScrollToPlugin.min.js",
-      "/js/script.js",
-      // Uncomment and include if needed
-      "/js/ThemeAnim.js",
-      // "https://some-website.com/stuff.js"
-    ];
-
-    function loadScriptSequentially(index) {
-      if (index >= scripts.length) {
-        return; // All scripts loaded
-      }
-
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src = scripts[index];
-      script.defer = true;
-
-      script.onload = () => {
-        // Load the next script once the current script is successfully loaded
-        loadScriptSequentially(index + 1);
-      };
-
-      script.onerror = () => {
-        console.error(`Failed to load script: ${scripts[index]}`);
-        // Optionally, you can decide to continue loading the next script even if one fails
-        loadScriptSequentially(index + 1);
-      };
-
-      document.body.appendChild(script);
-    }
-
-    // Start loading the first script
-    loadScriptSequentially(0);
   },
   created() {
     this.fetchDataAboutUs();

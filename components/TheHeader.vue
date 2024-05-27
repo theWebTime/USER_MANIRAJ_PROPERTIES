@@ -71,15 +71,15 @@
         class="nl__header-contact-info d-flex align-items-center pl-30 ml-30 pt-20 pb-20 d-none d-xl-flex"
       >
         <div class="nl__header-icon">
-          <a href="tel:8085550111">
+          <a :href="'tel:' + site.phone_number1">
             <i class="nl-icon nl-icon-call"></i>
           </a>
         </div>
         <div class="nl__header-number" v-if="site.phone_number1">
-          <h5 class="nl-fs-18 nl-lh-30 text-white">Need Help?</h5>
+          <h5 class="nl-fs-16 nl-lh-30 text-white">Need Help?</h5>
           <a
             :href="'tel:' + site.phone_number1"
-            class="nl-fs-18 nl-lh-24 text-white"
+            class="nl-fs-16 nl-lh-24 text-white"
             >+91 {{ site.phone_number1 }}</a
           >
         </div>

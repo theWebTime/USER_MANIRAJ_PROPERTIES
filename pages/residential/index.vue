@@ -39,7 +39,7 @@
       <div class="container container-1290">
         <div class="nlv2_dsign_wrapper_container nl-section-pt nl-section-pb">
           <div class="nlv2_dsign-box">
-            <div class="row g-30">
+            <div class="row g-30" v-if="residential.length > 0">
               <div
                 class="col-lg-6 col-md-6 has_fade_anim"
                 v-for="(item, index) in residential"
@@ -156,6 +156,13 @@
                 </div>
               </div> -->
             </div>
+            <div class="row g-30" v-else>
+              <img
+                src="/images/no_data_found.png"
+                style="height: 900px"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -163,6 +170,44 @@
   </div>
   <!-- Dsign Section End -->
 </template>
+<script setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import { loadScript, unloadScript } from "~/utils/scriptManager";
+
+const scripts = [
+  "/js/jquery.js",
+  "/js/bootstrap.bundle.min.js",
+  "/js/lity.min.js",
+  "/js/gsap.min.js",
+  "/js/locomotive-scroll.min.js",
+  "/js/ScrollTrigger.min.js",
+  "/js/SplitText.min.js",
+  "/js/marquee.min.js",
+  "/js/swiper-bundle.min.js",
+  "/js/appear.js",
+  "/js/odometer.min.js",
+  // "/js/count.js",
+  "/js/ScrollToPlugin.min.js",
+  "/js/script.js",
+  // "/js/ThemeAnim.js"
+];
+
+onMounted(async () => {
+  for (const script of scripts) {
+    try {
+      await loadScript(script);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+});
+
+onBeforeUnmount(() => {
+  for (const script of scripts) {
+    unloadScript(script);
+  }
+});
+</script>
 <script>
 export default {
   // layout: 'default',

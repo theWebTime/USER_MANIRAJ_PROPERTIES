@@ -142,23 +142,24 @@
       </div>
     </div>
     <br /><br /><br /><br />
-    <div class="nlv2_searvice-top-part pb-60">
-      <p
-        class="nl-fs-14 nl-font-body nl-lh-19 text-uppercase nl-color-brown nl-fw-500 nl-ls-1 pb-20 text-center"
-      >
-        Residential Floors
-      </p>
-    </div>
-    <div
-      class="container"
-      v-for="(item, index) in residential.residentialFloor"
-      :key="index"
-    >
-      <br /><br /><br />
+    <div v-if="residential.residentialFloor.length > 0">
+      <div class="nlv2_searvice-top-part pb-60">
+        <p
+          class="nl-fs-14 nl-font-body nl-lh-19 text-uppercase nl-color-brown nl-fw-500 nl-ls-1 pb-20 text-center"
+        >
+          Residential Floors
+        </p>
+      </div>
       <div
-        class="nlv2_blog_single_content pt-40 pb-35 pl-40 pr-40 nl-bg-color-gray-100 nl-border-radius-5 has_fade_anim"
+        class="container"
+        v-for="(item, index) in residential.residentialFloor"
+        :key="index"
       >
-        <!-- <div class="nlv2_blog_single_meta mb-20">
+        <br /><br /><br />
+        <div
+          class="nlv2_blog_single_content pt-40 pb-35 pl-40 pr-40 nl-bg-color-gray-100 nl-border-radius-5 has_fade_anim"
+        >
+          <!-- <div class="nlv2_blog_single_meta mb-20">
           <span class="nl_animation_title_main"
             ><a
               href="#"
@@ -174,26 +175,28 @@
             </a></span
           >
         </div> -->
-        <div
-          class="ns-service-info-contain mb-30 has_fade_anim"
-          v-if="item.floor"
-        >
-          <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black mb-10">
-            <i class="nl-icon nl-icon-circle-check"></i>
-
-            Floors
-          </h4>
-
-          <p
-            class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim"
+          <div
+            class="ns-service-info-contain mb-30 has_fade_anim"
+            v-if="item.floor"
           >
-            {{ item.floor }}
-          </p>
+            <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black mb-10">
+              <i class="nl-icon nl-icon-circle-check"></i>
+
+              Floors
+            </h4>
+
+            <p
+              class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim"
+            >
+              {{ item.floor }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
+
     <br /><br /><br /><br />
-    <div v-if="residential.residentialGallery">
+    <div v-if="residential.residentialGallery.length > 0">
       <div class="nlv2_searvice-top-part pb-60">
         <p
           class="nl-fs-14 nl-font-body nl-lh-19 text-uppercase nl-color-brown nl-fw-500 nl-ls-1 pb-20 text-center"
@@ -242,7 +245,10 @@
     </div>
     <!-- Gallery End-->
     <!-- Searvice Section Start -->
-    <div class="nlv2_searvice nl-bg-color-white">
+    <div
+      class="nlv2_searvice nl-bg-color-white"
+      v-if="residential.residentialAmenities.length > 0"
+    >
       <div class="nlv2_searvice_wrapper">
         <div class="container container-1290">
           <div
@@ -466,12 +472,93 @@
                 </div>
               </form>
             </div>
+            <div
+              class="col-lg-6 offset-lg-1 col-md-12 d-flex align-items-center"
+              v-if="residential.residentialDetail"
+            >
+              <div class="row gx-30 mt-30">
+                <div class="col-md-12">
+                  <div
+                    class="nl__hero-customer-info pt-30 pr-100 pb-30 pl-100 nl-bg-color-brown nl-border-radius-5 has_fade_anim"
+                  >
+                    <p class="text-white">
+                      <img
+                        src="/images/Maniraj-logo.jpg"
+                        alt=""
+                        height="100"
+                        width="100"
+                        style="border-radius: 50px"
+                      />
+                    </p>
+                    <h5
+                      class="nl-color-black nl-fs-20 text-uppercase nl-font-heading has_char_anim"
+                    >
+                      Maniraj Properties
+                    </h5>
+                    <div
+                      class="nl__hero-button-wrap mt-30 d-flex align-items-center justify-content-between"
+                    >
+                      <p
+                        class="text-white nl-fs-14 nl-fw-300 nl-lh-25 text-uppercase"
+                      >
+                        Download E-Brochure&nbsp;
+                      </p>
+                      <a
+                        :href="residential.residentialDetail.brochure"
+                        target="_blank"
+                        class="nl__header-btn d-flex align-items-center"
+                      >
+                        <i class="nl-icon nl-icon-angle-down text-white"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+<script setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import { loadScript, unloadScript } from "~/utils/scriptManager";
+
+const scripts = [
+  "/js/jquery.js",
+  "/js/bootstrap.bundle.min.js",
+  "/js/lity.min.js",
+  "/js/gsap.min.js",
+  "/js/locomotive-scroll.min.js",
+  "/js/ScrollTrigger.min.js",
+  "/js/SplitText.min.js",
+  "/js/marquee.min.js",
+  "/js/swiper-bundle.min.js",
+  "/js/appear.js",
+  "/js/odometer.min.js",
+  // "/js/count.js",
+  "/js/ScrollToPlugin.min.js",
+  "/js/script.js",
+  // "/js/ThemeAnim.js"
+];
+
+onMounted(async () => {
+  for (const script of scripts) {
+    try {
+      await loadScript(script);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+});
+
+onBeforeUnmount(() => {
+  for (const script of scripts) {
+    unloadScript(script);
+  }
+});
+</script>
 <script>
 export default {
   // layout: 'default',

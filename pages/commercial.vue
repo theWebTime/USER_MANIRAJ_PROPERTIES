@@ -33,7 +33,7 @@
     </div>
   </section>
   <!--Bredcrumb menu end-->
-  <section class="pt-120 pb-110">
+  <section class="pt-120 pb-110" v-if="commercial.length > 0">
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-8">
@@ -123,7 +123,48 @@
       </div>
     </div>
   </section>
+  <div class="row g-30" v-else>
+              <img src="/images/no_data_found.png" style="height: 900px;" alt="" />
+            </div>
 </template>
+<script setup>
+import { onMounted, onBeforeUnmount } from 'vue';
+import { loadScript, unloadScript } from '~/utils/scriptManager';
+
+const scripts = [
+  "/js/jquery.js",
+  "/js/bootstrap.bundle.min.js",
+  "/js/lity.min.js",
+  "/js/gsap.min.js",
+  "/js/locomotive-scroll.min.js",
+  "/js/ScrollTrigger.min.js",
+  "/js/SplitText.min.js",
+  "/js/marquee.min.js",
+  "/js/swiper-bundle.min.js",
+  "/js/appear.js",
+  "/js/odometer.min.js",
+  // "/js/count.js",
+  "/js/ScrollToPlugin.min.js",
+  "/js/script.js",
+  // "/js/ThemeAnim.js"
+];
+
+onMounted(async () => {
+  for (const script of scripts) {
+    try {
+      await loadScript(script);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+});
+
+onBeforeUnmount(() => {
+  for (const script of scripts) {
+    unloadScript(script);
+  }
+});
+</script>
 <script>
 export default {
   // layout: 'default',
