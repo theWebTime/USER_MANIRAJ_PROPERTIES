@@ -13,7 +13,7 @@
           <div
             class="nlv2_bredcrumb_top nl-color-white nl-fs-18 nl-lh-30 d-flex gap-3 justify-content-center align-items-center has_fade_anim"
           >
-            <a href="#" class="nl-color-white">Home</a>
+            <a href="/">Home</a>
             <svg
               width="9"
               height="13"

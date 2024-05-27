@@ -5,7 +5,7 @@
       class="nl__main-header d-flex align-items-center justify-content-xl-start justify-content-between p-3 p-xl-0"
     >
       <div class="nl__header-one-logo">
-        <nuxt-link to="/">
+        <a href="/">
           <img
             v-if="site.logo"
             :src="site.logo"
@@ -22,14 +22,14 @@
             width="100"
             style="border-radius: 50px"
           />
-        </nuxt-link>
+        </a>
       </div>
       <div
         class="nl__nav-and-social d-flex justify-content-between align-items-center d-none d-xl-flex"
       >
         <nav class="nl-navmenu text-center ul-li d-none d-lg-block">
           <ul>
-            <li><nuxt-link to="/">Home</nuxt-link></li>
+            <li><a href="/">Home</a></li>
 
             <li><nuxt-link to="/about-us">About Us</nuxt-link></li>
             <li class="has-submenu">
@@ -102,7 +102,7 @@
       <!-- <a href="index.html" class="logo"
         ><img src="/images/logov2.svg" alt="logo" class="img-fluid"
       /></a> -->
-      <nuxt-link to="/" class="logo">
+      <a href="/" class="logo">
         <img
           :src="site.logo"
           alt=""
@@ -110,9 +110,9 @@
           width="100"
           style="border-radius: 50px"
         />
-      </nuxt-link>
+      </a>
       <ul class="mobile-nav-menu">
-        <li><nuxt-link to="/">Home</nuxt-link></li>
+        <li><a href="/">Home</a></li>
 
         <li><nuxt-link to="/about-us">About Us</nuxt-link></li>
         <li><nuxtLink to="/residential">Residential</nuxtLink></li>

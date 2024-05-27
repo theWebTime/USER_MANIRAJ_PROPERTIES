@@ -8,7 +8,7 @@
       <div class="breadcrumb_inner">
         <h3>Product</h3>
         <div class="link">
-          <nuxt-link to="/">Home</nuxt-link>
+          <a href="/">Home</a>
           <a href="#">Product</a>
         </div>
       </div>
