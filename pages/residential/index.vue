@@ -41,7 +41,7 @@
           <div class="nlv2_dsign-box">
             <div class="row g-30" v-if="residential.length > 0">
               <div
-                class="col-lg-6 col-md-6 has_fade_anim"
+                class="col-xl-4 col-lg-6 col-md-6"
                 v-for="(item, index) in residential"
                 :key="index"
               >
@@ -50,7 +50,10 @@
                   v-if="item.image"
                 >
                   <nuxt-link :to="'/residential/' + item.id">
-                    <img :src="item.image" alt=""
+                    <img
+                      :src="item.image"
+                      style="height: 270px; width: 410px"
+                      alt=""
                   /></nuxt-link>
                   <div
                     class="nlv2_dsign-box-content position-absolute nl-bg-color-white mr-20 ml-20 nl-border-radius-5 pl-30 pt-30 pb-30"

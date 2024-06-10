@@ -39,9 +39,9 @@
         <div class="col-12 col-md-8">
           <div class="mb-40">
             <p
-              class="nl-color-brown nl-fs-14 nl-font-body nl-lh-19 mb-20 text-uppercase has_fade_anim"
+              class="nl-color-brown nl-fs-14 nl-font-body nl-lh-19 mb-20 nl-font-heading text-uppercase has_fade_anim"
             >
-              <h1>Commercial Properties</h1>
+              <h1>COMMERCIAL PROPERTIES</h1>
             </p>
           </div>
         </div>
@@ -52,12 +52,13 @@
       <div
         class="nlv2_blog_single_content pt-40 pb-35 pl-40 pr-40 nl-bg-color-gray-100 nl-border-radius-5 has_fade_anim"
       >
+      <h4 class="nl-fs-22 nl-font-heading nl-lh-24 nl-color-black mb-10">{{ index+1 }}.</h4>
         <div class="nlv2_blog_single_meta mb-20">
           <span class="nl_animation_title_main"
             ><a
               href="#"
               class="nl-fs-18 nl-color-black nl-lh-26 nl-font-heading"
-              >Type Of Property</a
+              >Type Of Property:</a
             ></span
           >
           <span class="nl_animation_title_main" v-if="item.type"
@@ -67,6 +68,25 @@
               >{{ item.type }}
             </a></span
           >
+        </div>
+        <div class="ns-service-info-contain mb-30 has_fade_anim" v-if="item.title">
+          <p
+            class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim" 
+          >
+            {{ item.title }}
+          </p>
+        </div>
+        <div class="ns-service-info-contain mb-30 has_fade_anim" v-if="item.image">
+          <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black mb-10">
+            <i class="nl-icon nl-icon-circle-check"></i>
+
+            Image
+          </h4>
+          <img
+            :src="item.image"
+            style="height: 270px; width: 410px; border-radius: 10px"
+            alt=""
+          />
         </div>
         <div class="ns-service-info-contain mb-30 has_fade_anim" v-if="item.square_feet">
           <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black mb-10">
@@ -82,12 +102,6 @@
           </p>
         </div>
         <div class="ns-service-info-contain mb-30 has_fade_anim" v-if="item.status_name">
-          <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black mb-10">
-            <i class="nl-icon nl-icon-circle-check"></i>
-
-            Property Status
-          </h4>
-
           <p
             class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim" 
           >
@@ -98,7 +112,7 @@
           <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black mb-10">
             <i class="nl-icon nl-icon-circle-check"></i>
 
-            location
+            Location
           </h4>
 
           <p
@@ -107,18 +121,8 @@
             {{ item.location }}
           </p>
         </div>
-        <div class="ns-service-info-contain mb-30 has_fade_anim">
-          <h4 class="nl-fs-18 nl-font-heading nl-lh-24 nl-color-black mb-10">
-            <i class="nl-icon nl-icon-circle-check"></i>
-
-            IFRAME
-          </h4>
-
-          <p
-            class="nl-fs-18 nl-font-body nl-lh-30 nl-color-gray-800 has_fade_anim" v-if="item.iframe"
-          >
-            <iframe width="800" height="230" :src="item.iframe"></iframe>
-          </p>
+        <div class="iframe-container" v-if="item.iframe">
+            <iframe :src="item.iframe" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -194,3 +198,21 @@ export default {
   },
 };
 </script>
+<style scoped>
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (100 / (16 / 9)) */
+  height: 0;
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+</style>

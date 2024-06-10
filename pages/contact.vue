@@ -116,19 +116,19 @@
                     >
                       Email Address
                     </h4>
-                    
+                    <div class="email-box">
                       <p
                         class="nl-fs-18 nl-color-gray-800 nl-lh-30 nl-font-body"
                       >
-                      <a
-                      v-if="site.email1"
-                      :href="'mailto:' + site.email1"
-                      target="_blank"
-                    >
-                        {{ site.email1 }}
-                        </a
-                    >
+                        <a
+                          v-if="site.email1"
+                          :href="'mailto:' + site.email1"
+                          target="_blank"
+                        >
+                          {{ site.email1 }}
+                        </a>
                       </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -191,7 +191,7 @@
           <div class="row">
             <div class="col-lg-12">
               <h2
-                class="nl-fs-48 nl-lh-62 nl-color-black text-center has_fade_anim"
+                class="nl-fs-48 nl-lh-62 nl-color-black nl-font-heading text-center has_fade_anim"
               >
                 Get in touch with us
               </h2>
@@ -305,8 +305,8 @@
   <!-- Contact Section End -->
 </template>
 <script setup>
-import { onMounted, onBeforeUnmount } from 'vue';
-import { loadScript, unloadScript } from '~/utils/scriptManager';
+import { onMounted, onBeforeUnmount } from "vue";
+import { loadScript, unloadScript } from "~/utils/scriptManager";
 
 const scripts = [
   "/js/jquery.js",
@@ -389,6 +389,7 @@ export default {
         .post("/contact-us-store", this.insertData)
         .then((res) => {
           if (res.data.success) {
+            alert("Thank you for the information.");
             this.resetValues();
           } else {
             this.$toast.error(res.data.message);
@@ -405,3 +406,19 @@ export default {
   },
 };
 </script>
+<style scoped>
+.email-box {
+  width: 100%;
+  max-width: 300px; /* Adjust based on your design */
+  padding: 10px;
+  word-wrap: break-word; /* This handles long words or emails */
+  word-break: break-all; /* This handles breaking at any point to avoid overflow */
+  overflow-wrap: break-word; /* This is an additional way to handle long words */
+}
+
+@media (max-width: 600px) {
+  .email-box {
+    max-width: 100%; /* Ensures it takes full width on small screens */
+  }
+}
+</style>

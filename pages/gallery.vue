@@ -34,24 +34,29 @@
   </section>
   <!--Bredcrumb menu end-->
   <!-- Gallery Start-->
-  <div class="nlv2_gallery nl-section-pb nl-bg-color-gray-100">
-    <div class="nlv2_gallery_wrapper">
-      <div class="nlv2_gallery_container pl-90 pr-90">
-        <div class="nlv2_gallery_wrapper_container">
-          <div class="row g-30" v-if="gallery.length > 0">
-            <div
-              class="col-lg-4 col-md-6"
-              v-for="(item, index) in gallery"
-              :key="index"
-            >
+  <div v-if="gallery.length > 0">
+    <div class="nlv2_gallery nl-section-pb nl-bg-color-gray-100">
+      <div class="nlv2_gallery_wrapper">
+        <div class="nlv2_gallery_container pl-90 pr-90">
+          <div class="nlv2_gallery_wrapper_container">
+            <div class="row g-30">
               <div
-                class="nlv2_gallery_big has_fade_anim image-hover"
-                v-if="item.data"
+                class="col-lg-4 col-md-6"
+                v-for="(item, index) in gallery"
+                :key="index"
               >
-                <img :src="item.data" alt="" />
+                <div
+                  class="nlv2_gallery_big has_fade_anim image-hover"
+                  v-if="item.data"
+                >
+                  <img
+                    :src="item.data"
+                    style="height: 624px; width: 635px"
+                    alt=""
+                  />
+                </div>
               </div>
-            </div>
-            <!-- <div class="col-lg-4 col-md-6">
+              <!-- <div class="col-lg-4 col-md-6">
               <div class="nlv2_gallery_small has_fade_anim">
                 <div class="nlv2_gallery_small-midoll image-hover">
                   <img src="/images/Gallery/gallery01.jpg" alt="" />
@@ -66,19 +71,20 @@
                 <img src="/images/Gallery/gallery02.jpg" alt="" />
               </div>
             </div> -->
-          </div>
-          <div class="row g-30" v-else>
-            <img src="/images/no_data_found.png" style="height: 900px" alt="" />
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="row g-30" v-else>
+    <img src="/images/no_data_found.png" style="height: 900px" alt="" />
+  </div>
   <!-- Gallery End-->
 </template>
 <script setup>
-import { onMounted, onBeforeUnmount } from 'vue';
-import { loadScript, unloadScript } from '~/utils/scriptManager';
+import { onMounted, onBeforeUnmount } from "vue";
+import { loadScript, unloadScript } from "~/utils/scriptManager";
 
 const scripts = [
   "/js/jquery.js",

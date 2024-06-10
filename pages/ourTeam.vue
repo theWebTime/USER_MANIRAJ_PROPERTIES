@@ -51,7 +51,9 @@
           <div
             class="nl__section-title pt-20 pb-60 m-auto nl__about-section-title"
           >
-            <h2 class="nl-fs-48 nl-lh-62 nl-color-black has_fade_anim">
+            <h2
+              class="nl-fs-48 nl-lh-62 nl-color-black nl-font-heading has_fade_anim"
+            >
               Meet Our Property Pioneers
             </h2>
           </div>
@@ -70,7 +72,11 @@
               class="nl__faq-banner-img has_fade_anim image-hover"
               v-if="item.image"
             >
-              <img :src="item.image" alt="" />
+              <img
+                :src="item.image"
+                style="height: 270px; width: 410px"
+                alt=""
+              />
               <!-- <div
                 class="nl__featured-badge nl-font-heading nl-fs-18 nl-lh-24 nl-color-black nl-border-radius-5 bg-white"
               >
@@ -281,8 +287,8 @@
   <!-- Property Details End-->
 </template>
 <script setup>
-import { onMounted, onBeforeUnmount } from 'vue';
-import { loadScript, unloadScript } from '~/utils/scriptManager';
+import { onMounted, onBeforeUnmount } from "vue";
+import { loadScript, unloadScript } from "~/utils/scriptManager";
 
 const scripts = [
   "/js/jquery.js",

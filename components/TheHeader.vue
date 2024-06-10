@@ -104,7 +104,16 @@
       /></a> -->
       <a href="/" class="logo">
         <img
+          v-if="site.logo"
           :src="site.logo"
+          alt=""
+          height="100"
+          width="100"
+          style="border-radius: 50px"
+        />
+        <img
+          v-else
+          src="/images/Maniraj-logo.jpg"
           alt=""
           height="100"
           width="100"

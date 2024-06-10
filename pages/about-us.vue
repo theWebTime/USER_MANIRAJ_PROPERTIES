@@ -42,12 +42,24 @@
       <div class="row">
         <div class="col-lg-5 pe-lg-0">
           <div class="nl__about-banner-img">
-            <div
+            <div class="responsive-image-container" v-if="aboutUs.image">
+              <img
+                :src="aboutUs.image"
+                style="border-radius: 10px"
+                alt="Responsive Image"
+                class="responsive-image"
+              />
+            </div>
+            <!-- <div
               class="nl__about-banner-img-sub image-hover has_fade_anim"
               v-if="aboutUs.image"
             >
-              <img :src="aboutUs.image" alt="" />
-            </div>
+              <img
+                :src="aboutUs.image"
+                style="height: 567px; width: 549px"
+                alt=""
+              />
+            </div> -->
           </div>
         </div>
         <div
@@ -65,7 +77,9 @@
             class="nl__section-title mt-20 mb-20 has_fade_anim"
             v-if="aboutUs.title"
           >
-            <h2 class="nl-fs-48 nl-lh-62 nl-color-black has_fade_anim">
+            <h2
+              class="nl-fs-48 nl-lh-62 nl-color-black nl-font-heading has_fade_anim"
+            >
               {{ aboutUs.title }}
             </h2>
           </div>
@@ -152,7 +166,7 @@
           </div>
           <p class="nl__counter-title nl-color-gray-800">Hand Of Experience</p>
         </div>
-        <div class="nl__counter-item" v-if="aboutUs.million_square_feet">
+        <!--  <div class="nl__counter-item" v-if="aboutUs.million_square_feet">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
           >
@@ -173,7 +187,7 @@
             <span class="suffix">+</span>
           </div>
           <p class="nl__counter-title nl-color-gray-800">Units</p>
-        </div>
+        </div> -->
         <div class="nl__counter-item" v-if="aboutUs.residential_property">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
@@ -989,7 +1003,7 @@
                           </p>
                           <a
                             href="/contact"
-                            class="nl__header-btn position-relative d-flex align-items-center"
+                            class="nl___header--btn position-relative d-flex align-items-center"
                           >
                             <i
                               class="nl-icon nl-icon-arrow-right text-white"
@@ -1012,7 +1026,7 @@
   </div>
   <div class="nlv2_newsleatter nl-bg-color-gray-100 nl-section-pb">
     <!-- Features Start-->
-    <section class="nl__features-section nl-bg-color-gray-100">
+    <!--  <section class="nl__features-section nl-bg-color-gray-100">
       <div class="container container-1290">
         <div
           class="nl__feature-content pt-120 pr-80 pb-120 pl-80 bg-white has_fade_anim"
@@ -1121,7 +1135,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </div>
   <!-- Features End-->
 </template>
@@ -1207,3 +1221,69 @@ export default {
   },
 };
 </script>
+<style scoped>
+.nl__hero-button-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.nl___header--btn {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 12px 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.nl___header--btn:before {
+  content: "";
+  background: #ffffff;
+  height: 1px;
+  width: 100px;
+  position: absolute;
+  right: 100%;
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 768px) {
+  .nl__hero-button-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nl___header--btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
+  .nl___header--btn:before {
+    display: none; /* Hide the before element on mobile */
+  }
+  .nl__hero-button-wrap p {
+    margin-bottom: 10px; /* Add some space between the text and the button */
+  }
+}
+</style>
+<style scoped>
+.responsive-image-container {
+  width: 100%;
+  max-width: 1200px; /* max width for larger screens */
+  margin: 0 auto; /* center the image container */
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .responsive-image-container {
+    padding: 0 15px; /* padding for smaller screens */
+  }
+}
+</style>

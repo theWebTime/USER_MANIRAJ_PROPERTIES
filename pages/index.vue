@@ -66,7 +66,7 @@
                   <div
                     class="nl__header-counter-number nl-color-brown nl-fs-32 nl-lh-44 nl-font-heading d-flex align-items-center"
                   >
-                    <span class="odometer" data-count="2">1</span>K+
+                    <span class="odometer">2</span>K+
                   </div>
                   <h5
                     class="nl__happy-customer nl-fs-16 nl-font-body nl-fw-500 nl-lh-22 nl-color-black anim-reveal-line has_char_anim"
@@ -111,12 +111,12 @@
                     >
                       Inquiry Now
                     </p>
-                    <a
-                      href="/contact"
-                      class="nl__header-btn position-relative d-flex align-items-center"
+                    <nuxt-link
+                      to="/contact"
+                      class="nl___header--btn position-relative d-flex align-items-center"
                     >
                       <i class="nl-icon nl-icon-arrow-right text-white"></i>
-                    </a>
+                    </nuxt-link>
                   </div>
                 </div>
               </div>
@@ -347,12 +347,24 @@
       <div class="row">
         <div class="col-lg-5 pe-lg-0">
           <div class="nl__about-banner-img">
-            <div
+            <div class="responsive-image-container" v-if="aboutUs.image">
+              <img
+                :src="aboutUs.image"
+                style="border-radius: 10px"
+                alt="Responsive Image"
+                class="responsive-image"
+              />
+            </div>
+            <!--  <div
               class="nl__about-banner-img-sub image-hover has_fade_anim"
               v-if="aboutUs.image"
             >
-              <img :src="aboutUs.image" alt="" />
-            </div>
+              <img
+                :src="aboutUs.image"
+                style="height: 567px; width: 549px"
+                alt=""
+              />
+            </div> -->
           </div>
         </div>
         <div
@@ -370,7 +382,9 @@
             class="nl__section-title mt-20 mb-20 has_fade_anim"
             v-if="aboutUs.title"
           >
-            <h2 class="nl-fs-48 nl-lh-62 nl-color-black has_fade_anim">
+            <h2
+              class="nl-fs-48 nl-lh-62 nl-color-black nl-font-heading has_fade_anim"
+            >
               {{ aboutUs.title }}
             </h2>
           </div>
@@ -426,15 +440,14 @@
             </ul>
           </div>
           <div class="nl__section-button mt-45 nl__button-brown has_fade_anim">
-            <a
-              href="/contact"
+            <nuxt-link
+              to="/contact"
               class="nl-color-black nl-fs-14 nl-fw-500 nl-lh-25 text-uppercase overflow-hidden d-inline-flex position-relative"
             >
-              <!-- <nuxt-link to="/contact"> -->
               <span class="position-relative z-1">Contact Us</span>
               <!-- </nuxt-link> -->
               <span class="nl__btn-hover-style"></span>
-            </a>
+            </nuxt-link>
           </div>
           <!-- <div class="row gx-30 mt-30">
             <div class="col-md-12">
@@ -488,32 +501,51 @@
 
   <!-- Marque section Start-->
   <section class="nl-marque-section pt-95 nl-section-pb nl-bg-color-gray-100">
-    <div class="marquees_wrapper has_fade_anim">
+    <!-- <div class="marquees_wrapper has_fade_anim">
       <h2 class="nl-color-black nl-fs-59 nl-fw-500 nl-lh-67 nl-font-body mr-80">
         <span class="item mr-40">
-          <!-- <i class="nl-icon nl-icon-house-location-2 nl-color-brown mr-20"></i> -->
+          <i class="nl-icon nl-icon-house-location-2 nl-color-brown mr-20"></i>
           <img
             src="/images/Maniraj-icon.png"
             alt=""
-            height="200"
-            width="150"
+            style="height: 150px; width: 150px"
             class="mr-20"
           />
           Maniraj Properties
-          <span class="nl__marqueue-text-stroke">#CityViewHeights</span>
         </span>
         <span class="item">
           <img
             src="/images/Maniraj-icon.png"
             alt=""
-            height="200"
-            width="200"
+            style="height: 150px; width: 150px"
             class="mr-20"
           />
-          #SkylineLiving
-          <!-- <span class="nl__marqueue-text-stroke">Home Bliss Realty</span> -->
+          Creating Homes, Building Trust
+          <span class="nl__marqueue-text-stroke">Home Bliss Realty</span>
         </span>
       </h2>
+    </div> -->
+    <div class="marquee-container">
+      <div class="marquee">
+        <h3
+          class="nl-color-black nl-fs-59 nl-fw-500 nl-lh-67 nl-font-body mr-80"
+        >
+          <img
+            src="/images/Maniraj-icon.png"
+            style="height: 150px; width: 150px"
+            alt="Marquee Image"
+            class="marquee-image"
+          />
+          <span class="marquee-slogan"> Maniraj Properties</span>
+          <img
+            src="/images/Maniraj-icon.png"
+            style="height: 150px; width: 150px"
+            alt="Marquee Image"
+            class="marquee-image"
+          />
+          <span class="marquee-slogan">Creating Homes, Building Trust</span>
+        </h3>
+      </div>
     </div>
   </section>
   <!-- Marque section End-->
@@ -535,7 +567,9 @@
           <div
             class="nl__section-title pt-20 pb-60 m-auto nl__about-section-title"
           >
-            <h2 class="nl-fs-48 nl-lh-62 nl-color-black has_fade_anim">
+            <h2
+              class="nl-fs-48 nl-lh-62 nl-color-black nl-font-heading has_fade_anim"
+            >
               Find your dream home with us
             </h2>
           </div>
@@ -552,7 +586,12 @@
           >
             <div class="nl__faq-banner-img has_fade_anim image-hover">
               <nuxt-link :to="'/residential/' + item.id">
-                <img v-if="item.image" :src="item.image" alt="" />
+                <img
+                  v-if="item.image"
+                  :src="item.image"
+                  style="height: 270px; width: 410px"
+                  alt=""
+                />
               </nuxt-link>
               <!-- <div
                 class="nl__featured-badge nl-font-heading nl-fs-18 nl-lh-24 nl-color-black nl-border-radius-5 bg-white"
@@ -756,6 +795,22 @@
           </div>
         </div> -->
       </div>
+      <br />
+      <div class="col-md-12 text-center">
+        <div class="nl__section-button mt-45 nl__button-brown has_fade_anim">
+          <nuxt-link
+            to="/residential"
+            class="nl-color-black nl-fs-14 nl-fw-500 nl-lh-25 text-uppercase overflow-hidden d-inline-flex position-relative"
+          >
+            <!-- <nuxt-link to="/contact"> -->
+            <span class="position-relative z-1"
+              >Click Here For More Residentials</span
+            >
+            <!-- </nuxt-link> -->
+            <span class="nl__btn-hover-style"></span>
+          </nuxt-link>
+        </div>
+      </div>
     </div>
   </section>
   <!-- Property Details End-->
@@ -853,19 +908,19 @@
                     Home.
                   </p>
                   <div
-                    class="nl__hero-button-wrap mt-30 d-flex align-items-center justify-content-between"
+                    class="nl___hero-button-wrap mt-30 d-flex align-items-center justify-content-between"
                   >
                     <p
                       class="text-white nl-fs-14 nl-fw-300 nl-lh-25 text-uppercase"
                     >
                       Inquiry Now
                     </p>
-                    <a
-                      href="/contact"
-                      class="nl__header-btn position-relative d-flex align-items-center"
+                    <nuxt-link
+                      to="/contact"
+                      class="nl___header--btn position-relative d-flex align-items-center"
                     >
                       <i class="nl-icon nl-icon-arrow-right text-white"></i>
-                    </a>
+                    </nuxt-link>
                   </div>
                 </div>
               </div>
@@ -1117,7 +1172,7 @@
           </div>
           <p class="nl__counter-title nl-color-gray-800">Hand Of Experience</p>
         </div>
-        <div class="nl__counter-item" v-if="aboutUs.million_square_feet">
+        <!-- <div class="nl__counter-item" v-if="aboutUs.million_square_feet">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
           >
@@ -1127,8 +1182,8 @@
             <span class="suffix">+</span>
           </div>
           <p class="nl__counter-title nl-color-gray-800">Million Square Feet</p>
-        </div>
-        <div class="nl__counter-item" v-if="aboutUs.units">
+        </div> -->
+        <!-- <div class="nl__counter-item" v-if="aboutUs.units">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
           >
@@ -1138,7 +1193,7 @@
             <span class="suffix">+</span>
           </div>
           <p class="nl__counter-title nl-color-gray-800">Units</p>
-        </div>
+        </div> -->
         <div class="nl__counter-item" v-if="aboutUs.residential_property">
           <div
             class="nl__counter-number d-flex align-items-center nl-color-brown nl-font-heading nl-fs-70 nl-lh-82 nl-font-heading"
@@ -1702,3 +1757,111 @@ export default {
   },
 };
 </script>
+<style scoped>
+.nl__hero-button-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.nl___header--btn {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 12px 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.nl___header--btn:before {
+  content: "";
+  background: #ffffff;
+  height: 1px;
+  width: 100px;
+  position: absolute;
+  right: 100%;
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 768px) {
+  .nl__hero-button-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nl___header--btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
+  .nl___header--btn:before {
+    display: none; /* Hide the before element on mobile */
+  }
+  .nl__hero-button-wrap p {
+    margin-bottom: 10px; /* Add some space between the text and the button */
+  }
+}
+</style>
+<style scoped>
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.marquee {
+  display: inline-flex;
+  align-items: center;
+  animation: marquee 20s linear infinite; /* Changed to 20s for slower speed */
+}
+
+.marquee img {
+  height: 50px; /* Adjust based on your design */
+  margin-right: 15px;
+}
+
+.marquee span {
+  font-size: 1.5em; /* Adjust based on your design */
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee img {
+    height: 30px; /* Adjust for smaller screens */
+  }
+  .marquee span {
+    font-size: 1em; /* Adjust for smaller screens */
+  }
+}
+</style>
+<style scoped>
+.responsive-image-container {
+  width: 100%;
+  max-width: 1200px; /* max width for larger screens */
+  margin: 0 auto; /* center the image container */
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .responsive-image-container {
+    padding: 0 15px; /* padding for smaller screens */
+  }
+}
+</style>
